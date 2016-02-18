@@ -98,6 +98,10 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Ctrl+semicolon move workspace to output right
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+j move workspace to output left
+bindsym $mod+Ctrl+Left move workspace to output left
 
 #Assign Workspaces to specific monitors
 
@@ -156,7 +160,7 @@ client.urgent           $border-color       $urgent-bg-color   $text-color      
 # Bar Baby
 
 bar {
-    i3bar_command i3bar -t
+	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
     position top
     mode hide
@@ -177,3 +181,4 @@ bar {
         urgent_workspace   $border-color        $urgent-bg-color        $text-color
     }
 }
+
