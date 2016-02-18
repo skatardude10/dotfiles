@@ -1,0 +1,14 @@
+mus(){ # Current song ..
+  mus=`mpc current`
+
+  if [[ $mus ]]; then
+ 	echo "$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n')"
+  fi
+}
+
+case $BLOCK_BUTTON in
+    3) mpc $password toggle | filter ;;  # right click, pause/unpause
+    4) mpc $password next   | mus ;;  # scroll up, next
+    5) mpc $password prev   | mus ;;  # scroll down, previous
+    *) mpc $password status | mus ;;
+esac

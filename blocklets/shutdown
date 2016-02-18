@@ -1,0 +1,4 @@
+case $BLOCK_BUTTON in
+    1) i3-msg "exec poweroff" ;;
+    3) i3-msg "exec reboot" ;;
+esac
