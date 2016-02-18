@@ -1,1 +1,179 @@
-/home/carder/.config/i3/config
+# Init
+set $mod Mod1
+floating_modifier $mod
+focus_on_window_activation urgent
+
+
+# Default Font
+
+font pango:System San Francisco Display 10
+
+# Workspaces
+
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 " 
+set $workspace7 "7 " 
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
+
+assign [class="google-chrome"] $workspace2
+assign [class="Steam"] $workspace5
+assign [class="URxvt"] $workspace3
+assign [class="Subl3"] $workspace1
+assign [class="Thunar"] $workspace4
+
+
+# Binds
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec subl3
+bindsym $mod+Ctrl+Return exec thunar
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+d exec dmenu_run -o 0.7 -dim 0.1 -p : -fn "Terminus-12:bold"
+bindsym $mod+d exec rofi -show run -lines 7 -eh 1 -width 20 -m 0 -padding 1 -opacity "100" -bw 1 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$inactive-bg-color" -fg "$inactive-text-color" -hlbg "$bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
+bindsym $mod+Ctrl+d exec rofi -show window -lines 20 -eh 1 -width 20 -m 0 -padding 10 -opacity "75" -bw 10 -hide-scrollbar -separator-style "solid" -bg-active "$bg-color" -fg-active "$inactive-text-color" -bc "$text-color" -bg "$bg-color" -fg "$inactive-text-color" -hlbg "$bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+#Assign Workspaces to specific monitors
+
+#workspace $workspace1 output DVI-D-0
+#workspace $workspace2 output HDMI-0
+#workspace $workspace3 output DVI-I-0
+#workspace $workspace4 output DVI-D-0
+#workspace $workspace5 output HDMI-0
+#workspace $workspace6 output DVI-I-0
+#workspace $workspace7 output DVI-D-0
+#workspace $workspace8 output HDMI-0
+#workspace $workspace9 output DVI-I-0
+#workspace $workspace10 output DVI-D-0
+
+
+# Auto-Start Programs
+
+exec sh ~/dotfiles/wallpaper-script.sh
+exec sh ~/dotfiles/drop-term.sh
+exec compton --config ~/dotfiles/.comptonrc
+exec xautolock -time 10 -notify 0 -bell 0 -locker lock
+exec sh ~/.local-exec.sh
+
+for_window [instance="dropterm"] floating enable;
+for_window [instance="dropterm"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
+bindsym $mod+grave [instance="dropterm"] scratchpad show
+
+
+# Window Parameters
+
+for_window [class="Gimp"] floating enable, border normal
+for_window [class="^.*"] border pixel 1
+gaps inner 0
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+
+#Colors
+set $bg-color            #1F8A70
+set $inactive-bg-color   #004358
+set $text-color          #BEDB39
+set $inactive-text-color #087C8A
+set $urgent-bg-color     #FD7400
+set $border-color        #004358
+set $inborder-color        #1F8A70
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $border-color       $bg-color          $text-color          $text-color 
+client.unfocused        $inborder-color       $inactive-bg-color $inactive-text-color $bg-color 
+client.focused_inactive $inborder-color       $inactive-bg-color $inactive-text-color $bg-color 
+client.urgent           $border-color       $urgent-bg-color   $text-color          $text-color 
+
+
+# Bar Baby
+
+bar {
+    i3bar_command i3bar -t
+    status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
+    position top
+    mode hide
+    hidden_state hide
+    modifier Mod1
+    tray_output none
+    height 26
+    font pango:System San Francisco Display 14
+    separator_symbol "⊹"
+    colors {
+        background $inactive-bg-colorDD
+        statusline $inactive-text-color
+        separator $text-color
+        #                  border               background              text
+        focused_workspace  $border-color        $bg-color               $text-color
+        active_workspace   $inborder-color        $inactive-bg-color      $inactive-text-color
+        inactive_workspace $inborder-color        $inactive-bg-color      $inactive-text-color $bg-color
+        urgent_workspace   $border-color        $urgent-bg-color        $text-color
+    }
+}
