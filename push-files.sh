@@ -1,1 +1,1 @@
-mv ~/dotfiles/i3/config ~/.config/i3/config && mv ~/dotfiles/.xinitrc ~/.xinitrc && mv ~/dotfiles/.Xresources ~/.Xresources && mv ~/dotfiles/.yaourtrc ~/.yaourtrc && mv ~/dotfiles/.bash_profile ~/.bash_profile && mv ~/dotfiles/.bashrc ~/.bashrc
+cp ~/dotfiles/i3/config ~/.config/i3/ && cp ~/dotfiles/.xinitrc ~/ && cp ~/dotfiles/.Xresources ~/ && cp ~/dotfiles/.yaourtrc ~/ && cp ~/dotfiles/.bash_profile ~/ && cp ~/dotfiles/.bashrc ~/
