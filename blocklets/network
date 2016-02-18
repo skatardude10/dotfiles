@@ -14,7 +14,25 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-INTERFACE="${1:-enp4s0}"
+
+if [[ $(ls /sys/class/net) =~ .*"wlp3s0u2".* ]] 
+then
+	iface='wlp3s0u2';
+else
+	if [[ $(ls /sys/class/net) =~ .*"wlp3s0".* ]] 
+	then
+		iface='wlp3s0';
+	else
+		if [[ $(ls /sys/class/net) =~ .*"enp4s0".* ]] 
+		then
+			iface='enp4s0';
+		fi
+	fi
+fi
+
+
+
+INTERFACE="${1:-$iface}"
 #LABEL="${2:-E}"
 #LABEL=""
 
