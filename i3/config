@@ -119,9 +119,9 @@ bindsym $mod+Ctrl+Left move workspace to output left
 
 # Auto-Start Programs
 
-exec sh ~/dotfiles/wallpaper-script.sh
-exec sh ~/dotfiles/drop-term.sh
-exec compton --config ~/dotfiles/.comptonrc
+exec sh ~/dotfiles/wallpaper-script.sh 
+exec sh ~/dotfiles/drop-term.sh 
+exec compton --config ~/dotfiles/.comptonrc 
 exec xautolock -time 10 -notify 0 -bell 0 -locker lock
 exec sh ~/.local-exec.sh
 
@@ -162,7 +162,7 @@ client.urgent           $border-color       $urgent-bg-color   $text-color      
 bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
-    position top
+    position bottom
     mode hide
     hidden_state hide
     modifier Mod1
@@ -182,3 +182,4 @@ bar {
     }
 }
 
+exec dot-sync
