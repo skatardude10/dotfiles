@@ -141,13 +141,13 @@ gaps outer 0
 
 
 #Colors
-set $bg-color            #1F8A70
-set $inactive-bg-color   #004358
-set $text-color          #BEDB39
-set $inactive-text-color #087C8A
-set $urgent-bg-color     #FD7400
-set $border-color        #7DC8CE
-set $inborder-color        #1F8A70
+set $bg-color            #775566
+set $inactive-bg-color   #554466
+set $text-color          #bbcc44
+set $inactive-text-color #887799
+set $urgent-bg-color     #bbddbb
+set $border-color        #223344
+set $inborder-color        #88aa88
 
 # window colors
 #                       border              background         text                 indicator
@@ -171,14 +171,14 @@ bar {
     font pango:System San Francisco Display 14
     separator_symbol "⊹"
     colors {
-        background $inactive-bg-color
-        statusline #7DC8CE
-        separator $text-color
+        background $border-color88
+        statusline $text-color
+        separator $inactive-text-color
         #                  border               background              text
-        focused_workspace  $border-color        $bg-color               $text-color
-        active_workspace   $inborder-color        $inactive-bg-color      $inactive-text-color
-        inactive_workspace $inborder-color        $inactive-bg-color      $inactive-text-color
-        urgent_workspace   $border-color        $urgent-bg-color        $text-color
+        focused_workspace  $inborder-color         $bg-color               $text-color
+        active_workspace   $inactive-text-color       $inactive-bg-color      $inactive-text-color
+        inactive_workspace $inactive-text-color       $inactive-bg-color      $inactive-text-color
+        urgent_workspace   $inactive-text-color        $urgent-bg-color        $text-color
     }
 }
 
