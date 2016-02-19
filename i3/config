@@ -121,7 +121,7 @@ bindsym $mod+Ctrl+Left move workspace to output left
 
 exec sh ~/dotfiles/wallpaper-script.sh
 exec sh ~/dotfiles/drop-term.sh
-#exec compton --config ~/dotfiles/.comptonrc
+exec compton --config ~/dotfiles/.comptonrc
 exec xautolock -time 10 -notify 0 -bell 0 -locker lock
 exec sh ~/.local-exec.sh
 
