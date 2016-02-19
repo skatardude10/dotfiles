@@ -162,7 +162,7 @@ client.urgent           $border-color       $urgent-bg-color   $text-color      
 bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
-    position bottom
+    position top
     #mode hide
     #hidden_state hide
     #modifier Mod1
@@ -171,7 +171,7 @@ bar {
     font pango:System San Francisco Display 14
     separator_symbol "⊹"
     colors {
-        background $inactive-bg-colorDD
+        background $inactive-bg-colorCC
         statusline $inactive-text-color
         separator $text-color
         #                  border               background              text
