@@ -134,10 +134,10 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 
 for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 1
-gaps inner 0
+gaps inner 10
 gaps outer 0
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 
 
 #Colors
