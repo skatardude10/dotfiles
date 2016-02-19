@@ -146,7 +146,7 @@ set $inactive-bg-color   #004358
 set $text-color          #BEDB39
 set $inactive-text-color #087C8A
 set $urgent-bg-color     #FD7400
-set $border-color        #004358
+set $border-color        #7DC8CE
 set $inborder-color        #1F8A70
 
 # window colors
@@ -163,21 +163,21 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
     position top
-    #mode hide
-    #hidden_state hide
-    #modifier Mod1
+    mode hide
+    hidden_state hide
+    modifier Mod1
     tray_output none
     height 26
     font pango:System San Francisco Display 14
     separator_symbol "⊹"
     colors {
-        background $inactive-bg-colorCC
-        statusline $inactive-text-color
+        background $inactive-bg-color
+        statusline #7DC8CE
         separator $text-color
         #                  border               background              text
         focused_workspace  $border-color        $bg-color               $text-color
         active_workspace   $inborder-color        $inactive-bg-color      $inactive-text-color
-        inactive_workspace $inborder-color        $inactive-bg-color      $inactive-text-color $bg-color
+        inactive_workspace $inborder-color        $inactive-bg-color      $inactive-text-color
         urgent_workspace   $border-color        $urgent-bg-color        $text-color
     }
 }
