@@ -1,4 +1,4 @@
- mpd_music_dir = "/home/carder/Music/"  
+ mpd_music_dir = "~/Music/"  
  mpd_connection_timeout = "5"  
  mpd_crossfade_time = "25"  
 
@@ -55,7 +55,7 @@ user_interface = "alternative" (classic/alternative)
 
 mpd_host = "localhost"
 mpd_port = "6600"
-visualizer_fifo_path = "/home/carder/.mpd/mpd.fifo"
+visualizer_fifo_path = "~/.mpd/mpd.fifo"
 visualizer_output_name = "FIFO"
 visualizer_sync_interval = "15"
 visualizer_type = "spectrum" (spectrum/wave)
