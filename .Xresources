@@ -1,49 +1,27 @@
-URxvt*scrollBar: false
-! :antialias=false
-! URxvt*font: xft:inconsolata:bold:size=8
-URxvt*letterSpace: -1
-URxvt*cursorBlink: 1
+*.scrollBar: false
+*.cursorBlink: 1
+*.color0: #41490c 
+*.color1: #241d2c 
+*.color2: #616f07 
+*.color3: #352f3a 
+*.color4: #473f45 
+*.color5: #5a5254 
+*.color6: #6d6467 
+*.color7: #7c8c02 
+*.color8: #79862f 
+*.color9: #8e7d92 
+*.color10: #94a405 
+*.color11: #a7b623 
+*.color12: #bbc740 
+*.color13: #cad465 
+*.color14: #a0a266 
+*.color15: #eaedc0
 
 
-! URxvt*font:     xft:inconsolata:size=12:antialias=false
-
-! Background color
-URxvt*background: [70]#14003D
-URxvt*depth: 32
-
-! URxvt*background: rgba:2211/0011/1133/5555
-! URxvt.transparent:   true
-! URxvt.shading:       2
-
-
-! Font color
-URxvt*foreground: #00FF22
-
-! Other colors
-URxvt.color0: black
-URxvt.color1: red3
-URxvt.color2: green3
-URxvt.color3: yellow3
-URxvt.color4: blue2
-URxvt.color5: magenta3
-URxvt.color6: cyan3
-URxvt.color7: gray90
-URxvt.color8: grey50
-URxvt.color9: red
-URxvt.color10: green
-URxvt.color11: yellow
-URxvt.color12: blue
-URxvt.color13: magenta
-URxvt.color14: cyan
-URxvt.color15: white
-
-
+*.background: #223344
+*.foreground: #889900
+*.depth: 32
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
- 
 URxvt.iso14755: False
- 
 URxvt.perl-ext-common: default,clipboard
-
-noblur.background: [0]#14003D
-
