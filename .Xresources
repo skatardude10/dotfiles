@@ -1,25 +1,25 @@
 *.scrollBar: false
 *.cursorBlink: 1
-*.color0: #41490c 
-*.color1: #241d2c 
-*.color2: #616f07 
-*.color3: #352f3a 
-*.color4: #473f45 
-*.color5: #5a5254 
-*.color6: #6d6467 
-*.color7: #7c8c02 
-*.color8: #79862f 
-*.color9: #8e7d92 
-*.color10: #94a405 
-*.color11: #a7b623 
-*.color12: #bbc740 
-*.color13: #cad465 
-*.color14: #a0a266 
-*.color15: #eaedc0
+*.color0: #aa8899 
+*.color1: #bb9911 
+*.color2: #aabb44 
+*.color3: #668833 
+*.color4: #885577 
+*.color5: #665588 
+*.color6: #5599aa 
+*.color7: #557766 
+*.color8: #99aa22 
+*.color9: #667788 
+*.color10: #889900 
+*.color11: #88aa88 
+*.color12: #bbdd00 
+*.color13: #99aa00 
+*.color14: #bbbb44 
+*.color15: #ccaa00
 
 
-*.background: #223344
-*.foreground: #889900
+*.background: #222244
+*.foreground: #ccdd11
 *.depth: 32
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
