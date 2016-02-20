@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/dotfiles; git pull; sh push-files.sh i3-msg restart
