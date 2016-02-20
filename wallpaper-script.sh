@@ -12,5 +12,5 @@ while true; do
 
 	((range)) && feh --bg-fill "${files[RANDOM % range]}" "${files[RANDOM % range]}" "${files[RANDOM % range]}"
 
-	sleep 10m
+	sleep 3m
 done
