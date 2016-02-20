@@ -169,11 +169,11 @@ bar {
     tray_output none
     height 26
     font pango:System San Francisco Display 14
-    separator_symbol "⊹"
+    separator_symbol "∿"
     colors {
-        background $inactive-bg-color88
+        background $bg-colorBB
         statusline $text-color
-        separator $inactive-text-color
+        separator  $inactive-text-color
         #                  border               background              text
         focused_workspace  $inborder-color         $bg-color               $text-color
         active_workspace   $inactive-text-color       $inactive-bg-color      $inactive-text-color
