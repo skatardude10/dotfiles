@@ -171,9 +171,9 @@ bar {
     font pango:System San Francisco Display 14
     separator_symbol "⊹"
     colors {
-        background $border-colorBB
-        statusline $inactive-text-color
-        separator $text-color
+        background $inactive-bg-color88
+        statusline $text-color
+        separator $inactive-text-color
         #                  border               background              text
         focused_workspace  $inborder-color         $bg-color               $text-color
         active_workspace   $inactive-text-color       $inactive-bg-color      $inactive-text-color

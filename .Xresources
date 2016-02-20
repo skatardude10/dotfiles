@@ -1,8 +1,8 @@
 *.scrollBar: false
 *.cursorBlink: 1
 *.color0: #aa8899 
-*.color1: #bb9911 
-*.color2: #aabb44 
+*.color1: #ccdd11 
+*.color2: #88aa00 
 *.color3: #668833 
 *.color4: #885577 
 *.color5: #665588 
@@ -17,8 +17,7 @@
 *.color14: #bbbb44 
 *.color15: #ccaa00
 
-
-*.background: #222244
+*.background: #002233
 *.foreground: #ccdd11
 *.depth: 32
 
