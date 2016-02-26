@@ -36,7 +36,7 @@ bindsym $mod+Ctrl+Return exec thunar
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec dmenu_run -o 0.7 -dim 0.1 -p : -fn "Terminus-12:bold"
 
-bindsym $mod+d exec rofi -show run -lines 7 -eh 1 -width 20 -m 0 -padding 1 -opacity "100" -bw 1 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$inactive-bg-color" -fg "$inactive-text-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 1 -width 20 -m 0 -padding 20 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
 
 bindsym $mod+Ctrl+d exec rofi -show window -lines 20 -eh 1 -width 20 -m 0 -padding 10 -opacity "75" -bw 10 -hide-scrollbar -separator-style "solid" -bg-active "$bg-color" -fg-active "$inactive-text-color" -bc "$text-color" -bg "$bg-color" -fg "$inactive-text-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
 
