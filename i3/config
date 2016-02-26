@@ -30,9 +30,10 @@ assign [class="Thunar"] $workspace4
 
 # Binds
 
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec subl3
-bindsym $mod+Ctrl+Return exec thunar
+bindsym $mod+Return exec i3-sensible-terminal; workspace $workspace3
+bindsym $mod+Shift+Return exec subl3; workspace $workspace1
+bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
+bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec dmenu_run -o 0.7 -dim 0.1 -p : -fn "Terminus-12:bold"
 
