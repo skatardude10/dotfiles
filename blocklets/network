@@ -52,7 +52,7 @@ ipaddr="${ipaddr:-0.0.0.0}"
 
 # full text
 echo -n "$LABEL$ipaddr"
-[ -n "$speed" ] && echo "($speed Mbits/s)" || echo
+[ -n "$speed" ] && echo " $speed" || echo
 
 # short text
 echo "$LABEL$ipaddr"

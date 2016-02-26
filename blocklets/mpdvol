@@ -1,5 +1,5 @@
 filter() {
-    sed '3q;d' | cut -c 8-13
+    sed '3q;d' | cut -c 8-10
 }
 
 case $BLOCK_BUTTON in

@@ -10,7 +10,7 @@ while true; do
 	done
 	range=${#files[@]}
 
-	((range)) && feh --bg-fill "${files[RANDOM % range]}" "${files[RANDOM % range]}" "${files[RANDOM % range]}"
+	((range)) && feh --bg-tile "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
 
 	sleep 3m
 done
