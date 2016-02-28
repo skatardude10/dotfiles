@@ -198,7 +198,7 @@ bar {
     font pango:System San Francisco Display 14, FontAwesome 10
     separator_symbol "▶"
     colors {
-        background $bg-color00
+        background $00000000
         statusline $bg-color
         separator  $inactive-text-color
         #                  border               background              text
