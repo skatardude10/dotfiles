@@ -185,4 +185,28 @@ bar {
     }
 }
 
+bar {
+	i3bar_command i3bar -t
+    status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
+    position bottom
+    mode hide
+    hidden_state hide
+    modifier Ctrl
+    tray_output none
+    workspace_buttons no
+    height 24
+    font pango:System San Francisco Display 14, FontAwesome 10
+    separator_symbol "▶"
+    colors {
+        background $bg-color
+        statusline $text-color
+        separator  $inactive-text-color
+        #                  border               background              text
+        focused_workspace  $border-color        $bg-color               $text-color
+        active_workspace   $border-color        $inactive-bg-color      $inactive-text-color
+        inactive_workspace $border-color        $inactive-bg-color      $inactive-text-color
+        urgent_workspace   $text-color          $urgent-bg-color        $text-color
+    }
+}
+
 exec dot-sync
