@@ -2,5 +2,6 @@
 
 [ "$(pgrep i3lock >/dev/null 2>&1)" ] && pkill i3lock && sleep 0.1
 scrot ~/.tmp/screenshot.png
-convert -scale 20% -scale 500% ~/.tmp/screenshot.png ~/.tmp/screenshotblur.png
+#convert -scale 20% -scale 500% ~/.tmp/screenshot.png ~/.tmp/screenshotblur.png
+convert -blur 0x8 ~/.tmp/screenshot.png ~/.tmp/screenshotblur.png
 i3lock -i ~/.tmp/screenshotblur.png
