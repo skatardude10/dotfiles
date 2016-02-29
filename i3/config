@@ -194,7 +194,7 @@ bar {
     tray_output none
     workspace_buttons no
     height 24
-    font pango:System San Francisco Display 14
+    font pango:System San Francisco Display 14, FontAwesome 10
     colors {
         background $00000000
         statusline $bg-color
