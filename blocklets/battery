@@ -18,7 +18,7 @@ timeleft = ""
 if state == "Discharging":
     time = commasplitstatus[-1].split()[0]
     time = ":".join(time.split(":")[0:2])
-    timeleft = " ({})".format(time)
+    timeleft = " {}".format(time)
 else:
     fulltext += " " + FA_PLUG
 
