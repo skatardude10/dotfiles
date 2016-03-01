@@ -10,7 +10,7 @@ then
 		done
 		range=${#files[@]}
 		((range)) && feh --bg-fill "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
-		sleep 3m
+		sleep 10m
 	done
 else
 	if [[ $(ls /sys/class/net) =~ .*"wlp3s0".* ]] 
@@ -22,7 +22,7 @@ else
 			done
 			range=${#files[@]}
 			((range)) && feh --bg-fill "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
-			sleep 3m
+			sleep 10m
 		done
 	else
 		if [[ $(ls /sys/class/net) =~ .*"enp4s0".* ]] 
@@ -34,7 +34,7 @@ else
 				done
 				range=${#files[@]}
 				((range)) && feh --bg-tile "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
-				sleep 3m
+				sleep 10m
 			done
 		fi
 	fi
