@@ -15,7 +15,7 @@ then
 else
 	if [[ $(ls /sys/class/net) =~ .*"wlp3s0".* ]] 
 	then
-		feh --bg-fill ~/dotfiles/wallpapers/expand.png # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
+		feh --bg-fill ~/dotfiles/wallpapers/wallpaper.png # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
 	else
 		if [[ $(ls /sys/class/net) =~ .*"enp4s0".* ]] 
 		then
