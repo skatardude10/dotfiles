@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo cp ~/dotfiles/lightdm/usericon.png /usr/share/pixmaps/ ; cp ~/dotfiles/wallpapers/wallpaper.png /usr/share/pixmaps/ & cp ~/dotfiles/lightdm/lightdm.conf /etc/lightdm/lightdm.conf & cp ~/dotfiles/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+sudo cp ~/dotfiles/lightdm/usericon.png /usr/share/pixmaps/ ; sudo cp ~/dotfiles/wallpapers/wallpaper.png /usr/share/pixmaps/ ; sudo cp ~/dotfiles/lightdm/lightdm.conf /etc/lightdm/lightdm.conf ; sudo cp ~/dotfiles/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
