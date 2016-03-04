@@ -92,16 +92,16 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2; workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3; workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4; workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5; workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6; workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7; workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
 bindsym $mod+Ctrl+semicolon move workspace to output right
 bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+Ctrl+j move workspace to output left
