@@ -154,7 +154,7 @@ set $border-color        #aa3355
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $border-color       $bg-color          $text-color          $urgent-bg-color 
+client.focused          $urgent-bg-color    $bg-color          $text-color          $border-color  
 client.unfocused        $border-color       $inactive-bg-color $inactive-text-color $border-color 
 client.focused_inactive $border-color       $inactive-bg-color $inactive-text-color $border-color
 client.urgent           $border-color       $urgent-bg-color   $text-color          $border-color 
