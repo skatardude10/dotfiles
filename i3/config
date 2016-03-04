@@ -151,12 +151,12 @@ set $text-color          #221144
 set $inactive-text-color #221144
 set $urgent-bg-color     #ee5555
 set $border-color        #aa3355
+set $border2-color       #5599aa
 set $indicator-color     #889900
-set $activeb-color       #5599aa
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $activeb-color      $bg-color          $text-color          $indicator-color  
+client.focused          $border-color       $border2-color     $text-color          $indicator-color  
 client.unfocused        $border-color       $inactive-bg-color $inactive-text-color $border-color 
 client.focused_inactive $border-color       $inactive-bg-color $inactive-text-color $border-color
 client.urgent           $border-color       $urgent-bg-color   $text-color          $border-color 
