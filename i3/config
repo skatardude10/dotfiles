@@ -200,14 +200,14 @@ bar {
     height 24
     font pango:System San Francisco Display 14, FontAwesome 10
     colors {
-        background $bg-color
-        statusline $text-color
+        background $text-color
+        statusline $border2-color
         separator  $inactive-text-color
         #                  border               background              text
-        focused_workspace  $border-color        $bg-color               $text-color
-        active_workspace   $border-color        $inactive-bg-color      $inactive-text-color
-        inactive_workspace $border-color        $inactive-bg-color      $inactive-text-color
-        urgent_workspace   $text-color          $urgent-bg-color        $text-color
+        focused_workspace  $text-color          $text-color             $border2-color
+        active_workspace   $text-color          $text-color             $border2-color
+        inactive_workspace $text-color          $text-color             $border2-color
+        urgent_workspace   $text-color          $text-color             $indicator-color
     }
 }
 
@@ -224,7 +224,7 @@ bar {
     font pango:System San Francisco Display 14, FontAwesome 10
     colors {
         background $00000000
-        statusline $bg-color
+        statusline $border2-color
     }
 }
 
