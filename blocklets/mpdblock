@@ -7,8 +7,8 @@ mus(){ # Current song ..
 }
 
 case $BLOCK_BUTTON in
-    3) mpc $password toggle | filter ;;  # right click, pause/unpause
-    4) mpc $password next   | mus ;;  # scroll up, next
-    5) mpc $password prev   | mus ;;  # scroll down, previous
-    *) mpc $password status | mus ;;
+    3) MPD_HOST=127.0.0.1 mpc $password toggle | filter ;;  # right click, pause/unpause
+    4) MPD_HOST=127.0.0.1 mpc $password next   | mus ;;  # scroll up, next
+    5) MPD_HOST=127.0.0.1 mpc $password prev   | mus ;;  # scroll down, previous
+    *) MPD_HOST=127.0.0.1 mpc $password status | mus ;;
 esac

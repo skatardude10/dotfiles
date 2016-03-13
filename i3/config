@@ -223,7 +223,7 @@ bar {
     height 24
     font pango:System San Francisco Display 14, FontAwesome 10
     colors {
-        background $00000000
+        background $text-color
         statusline $border2-color
     }
 }
