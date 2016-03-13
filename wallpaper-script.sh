@@ -25,7 +25,7 @@ else
 					[[ -f $i ]] && files+=("$i")
 				done
 				range=${#files[@]}
-				((range)) && feh --bg-tile "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
+				((range)) && feh --bg-fill "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
 				sleep 10m
 			done
 		fi
