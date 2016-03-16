@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s nullglob
 cd ~/dotfiles/wallpapers
-if [[ $(ls /sys/class/net) =~ .*"wlp3s0u2".* ]] 
+if [[ $(ls /sys/class/net) =~ .*"wlp0s26u1u1".* ]] 
 then
 	while true; do
 		files=()
