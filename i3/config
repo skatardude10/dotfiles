@@ -170,14 +170,14 @@ smart_borders on
 
 
 #Colors
-set $bg-color            #111144
-set $inactive-bg-color   #111144
-set $text-color          #55aa33
-set $inactive-text-color #55aa33
-set $urgent-bg-color     #dddd33
-set $border-color        #dddd33
-set $border2-color       #772277
-set $indicator-color     #ee3311
+set $bg-color            #101620
+set $inactive-bg-color   #101620
+set $text-color          #58c0e0
+set $inactive-text-color #58c0e0
+set $urgent-bg-color     #237ec8
+set $border-color        #237ec8
+set $border2-color       #1a63a0
+set $indicator-color     #2463a0
 
 # window colors
 #                       border              background         text                 indicator
