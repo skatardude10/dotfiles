@@ -18,7 +18,7 @@
 *.color15: #e0cbc9
 
 
-*.background: #220011
+*.background: #222244
 *.foreground: #5577aa
 *.depth: 32
 
