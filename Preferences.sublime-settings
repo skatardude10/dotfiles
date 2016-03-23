@@ -1,13 +1,13 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Colorsublime - Themes/Aurora.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/AgolaDark.tmTheme",
 	"font_options":
 	[
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 12,
+	"font_size": 16,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -24,5 +24,5 @@
 	"material_theme_small_tab": true,
 	"material_theme_tree_headings": true,
 	"overlay_scroll_bars": "enabled",
-	"theme": "Soda Dark 3.sublime-theme"
+	"theme": "Material-Theme-Darker.sublime-theme"
 }

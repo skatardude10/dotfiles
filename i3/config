@@ -6,15 +6,15 @@ focus_on_window_activation urgent
 
 # Default Font
 
-font pango:System San Francisco Display 10
+font pango:Envy Code R 16
 
 # Workspaces
 
 set $workspace1 "1 "
-set $workspace2 "2 "
+set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
-set $workspace5 "5 "
+set $workspace5 "5 "
 set $workspace6 "6 " 
 set $workspace7 "7 " 
 set $workspace8 "8 "
@@ -22,6 +22,7 @@ set $workspace9 "9 "
 set $workspace10 "10 "
 
 assign [class="google-chrome"] $workspace2
+assign [class="Firefox"] $workspace2
 assign [class="Steam"] $workspace5
 assign [class="URxvt"] $workspace3
 assign [class="Subl3"] $workspace1
@@ -37,9 +38,9 @@ bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec dmenu_run -o 0.7 -dim 0.1 -p : -fn "Terminus-12:bold"
 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 1 -width 20 -m 0 -padding 20 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "System San Francisco Display 10"
+bindsym $mod+d exec rofi -show run -lines 7 -eh 1 -width 20 -m 0 -padding 0 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "Envy Code R 16"
 
-bindsym $mod+Ctrl+d exec rofi -show window -lines 3 -eh 1 -width 20 -m 0 -padding 20 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "System San Francisco Display 10"
+bindsym $mod+Ctrl+d exec rofi -show window -lines 7 -eh 1 -width 20 -m 0 -padding 0 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "Envy Code R 16"
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -172,11 +173,11 @@ smart_borders on
 
 
 #Colors
-set $bg-color            #88779900
-set $inactive-bg-color   #88779900
+set $bg-color            #887799
+set $inactive-bg-color   #887799
 set $text-color          #ccbbdd
 set $inactive-text-color #9999cc
-set $urgent-bg-color     #9999cc00
+set $urgent-bg-color     #9999cc
 set $border-color        #9999cc
 set $border2-color       #220011
 set $indicator-color     #225588
@@ -195,21 +196,21 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
     position top
-    mode dock
-    # hidden_state hide
+    mode hide
+    hidden_state hide
     modifier Mod1
     tray_output none
-    height 26
-    font pango:Envy Code R 12
+    height 36
+    font pango:Envy Code R 16
     colors {
-        background $bg-color
+        background $bg-color00
         statusline $text-color
         separator  $text-color
         #                  border               background              text
-        focused_workspace  $bg-color          $bg-color              $text-color 
-        active_workspace   $bg-color          $bg-color              $inactive-text-color
-        inactive_workspace $bg-color          $bg-color              $inactive-text-color 
-        urgent_workspace   $bg-color          $bg-color              $text-color 
+        focused_workspace  $bg-color00          $bg-color00              $text-color 
+        active_workspace   $bg-color00          $bg-color00              $inactive-text-color
+        inactive_workspace $bg-color00          $bg-color00              $inactive-text-color 
+        urgent_workspace   $bg-color00          $bg-color00              $text-color 
     }
 }
 
@@ -217,15 +218,15 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
     position bottom
-    mode dock
-    # hidden_state hide
+    mode hide
+    hidden_state hide
     modifier Ctrl
     tray_output none
     workspace_buttons no
-    height 26
-    font pango:Envy Code R 12
+    height 36
+    font pango:Envy Code R 16
     colors {
-        background $bg-color
+        background $bg-color00
         statusline $text-color
     }
 }
