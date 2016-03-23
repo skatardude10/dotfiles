@@ -163,21 +163,21 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 
 for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 1
-gaps inner 18
-gaps outer 10
+gaps inner 25
+gaps outer 25
 #smart_gaps on
 smart_borders on
 
 
 #Colors
-set $bg-color            #101620
-set $inactive-bg-color   #101620
-set $text-color          #58c0e0
-set $inactive-text-color #58c0e0
-set $urgent-bg-color     #237ec8
-set $border-color        #237ec8
-set $border2-color       #1a63a0
-set $indicator-color     #2463a0
+set $bg-color            #88779900
+set $inactive-bg-color   #88779900
+set $text-color          #ccbbdd
+set $inactive-text-color #9999cc
+set $urgent-bg-color     #9999cc00
+set $border-color        #9999cc
+set $border2-color       #220011
+set $indicator-color     #225588
 
 # window colors
 #                       border              background         text                 indicator
@@ -193,20 +193,20 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
     position top
-    mode hide
-    hidden_state hide
+    mode dock
+    # hidden_state hide
     modifier Mod1
     tray_output none
-    height 24
-    font pango:System San Francisco Display 14, FontAwesome 10
+    height 26
+    font pango:Envy Code R 12
     colors {
-        background $bg-color 
+        background $bg-color
         statusline $text-color
         separator  $text-color
         #                  border               background              text
         focused_workspace  $bg-color          $bg-color              $text-color 
-        active_workspace   $bg-color          $bg-color              $text-color 
-        inactive_workspace $bg-color          $bg-color              $text-color 
+        active_workspace   $bg-color          $bg-color              $inactive-text-color
+        inactive_workspace $bg-color          $bg-color              $inactive-text-color 
         urgent_workspace   $bg-color          $bg-color              $text-color 
     }
 }
@@ -215,15 +215,15 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
     position bottom
-    mode hide
-    hidden_state hide
+    mode dock
+    # hidden_state hide
     modifier Ctrl
     tray_output none
     workspace_buttons no
-    height 24
-    font pango:System San Francisco Display 14, FontAwesome 10
+    height 26
+    font pango:Envy Code R 12
     colors {
-        background $bg-color 
+        background $bg-color
         statusline $text-color
     }
 }
