@@ -30,7 +30,8 @@ assign [class="Thunar"] $workspace4
 
 
 # Binds
-
+bindsym mod1+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 100 100
+bindsym --whole-window button2 floating toggle
 bindsym $mod+Return exec i3-sensible-terminal; workspace $workspace3
 bindsym $mod+Shift+Return exec subl3; workspace $workspace1
 bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
