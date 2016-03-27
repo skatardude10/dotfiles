@@ -41,8 +41,8 @@ def color(percent):
         return "#FFFF66"
     return "#FFFFFF"
 
-form =  ' <span color="{}">{}%</span>'
-fulltext += form.format(color(percentleft), percentleft)
+form =  '<span>{}%</span>'
+fulltext += form.format(percentleft)
 fulltext += timeleft
 
 print(fulltext)
