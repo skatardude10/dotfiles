@@ -202,7 +202,7 @@ bar {
     modifier Mod1
     tray_output none
     height 36
-    font pango:Envy Code R 16
+    font pango:Awesome 16, Envy Code R 16
     colors {
         background $bg-color88
         statusline $text-color
@@ -225,7 +225,7 @@ bar {
     tray_output none
     workspace_buttons no
     height 36
-    font pango:Envy Code R 16
+    font pango:Awesome 16, Envy Code R 16
     colors {
         background $bg-color88
         statusline $text-color
