@@ -16,16 +16,12 @@ fulltext = "<span>{}</span>".format(FA_LIGHTNING)
 timeleft = ""
 
 if state == "Discharging":
-    time = commasplitstatus[-1].split()[0]
-    time = ":".join(time.split(":")[0:2])
-    timeleft = " {}".format(time)
     fulltext = "<span>{}</span>".format(FA_LIGHTNING)
 else:
     fulltext = "<span>{}</span>".format(FA_PLUG)
 
 form =  '<span>{}</span>'
 fulltext += form.format(percentleft)
-fulltext += timeleft
 
 print(fulltext)
 print(fulltext)
