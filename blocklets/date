@@ -1,8 +1,4 @@
 #!/bin/sh
 #~/scripts/i3blocks/blocklets/date.sh
 
-case $BLOCK_BUTTON in
-  3)date '+%A, %B %d %Y'
-esac
-
-date '+%H %M %S'
+date '+%H%M%S'

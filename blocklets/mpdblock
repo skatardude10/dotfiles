@@ -1,7 +1,8 @@
 mus(){ # Current song ..
   mus=`mpc current`
   if [[ $mus ]]; then
- 	echo "$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n' | tr [a-z] [A-Z])"
+  	mp3=$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n' | tr -d ' ,)(/\-`.[]' | tr [a-z] [A-Z])
+ 	echo "$(for i in $mp3; do    echo "$mp3"; done)"
   fi
 }
 

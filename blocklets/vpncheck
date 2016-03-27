@@ -1,6 +1,6 @@
 if pgrep "openvpn" > /dev/null
 then
-	echo "VPN-ON"
+	echo "VPNON"
 else
-	echo "VPN-OFF"
+	echo "VPNOFF"
 fi
