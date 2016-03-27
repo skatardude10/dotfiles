@@ -9,14 +9,14 @@ state = status.split(": ")[1].split(", ")[0]
 commasplitstatus = status.split(", ")
 percentleft = int(commasplitstatus[1].rstrip("%\n"))
 
-FA_LIGHTNING = "<span font='FontAwesome'>\uf0e7</span>"
+FA_BATT = "<span font='FontAwesome'>\uf240</span>"
 FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
 
-fulltext = "<span>{}</span>".format(FA_LIGHTNING)
+fulltext = "<span>{}</span>".format(FA_BATT)
 timeleft = ""
 
 if state == "Discharging":
-    fulltext = "<span>{}</span>".format(FA_LIGHTNING)
+    fulltext = "<span>{}</span>".format(FA_BATT)
 else:
     fulltext = "<span>{}</span>".format(FA_PLUG)
 
