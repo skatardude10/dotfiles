@@ -9,14 +9,26 @@ state = status.split(": ")[1].split(", ")[0]
 commasplitstatus = status.split(", ")
 percentleft = int(commasplitstatus[1].rstrip("%\n"))
 
-FA_BATT = "<span font='FontAwesome'>\uf240</span>"
+def BATT_ICON(percentleft):
+    if percentleft >= 95:
+        FA_BATT = "<span font='FontAwesome'>\uf240</span>"
+    elif percentleft >= 70:
+        FA_BATT = "<span font='FontAwesome'>\uf241</span>"
+    elif percentleft >= 45:
+        FA_BATT = "<span font='FontAwesome'>\uf242</span>"
+    elif percentleft >= 25:
+        FA_BATT = "<span font='FontAwesome'>\uf243</span>"
+    else:
+        FA_BATT = "<span font='FontAwesome'>\uf244</span>"
+    return FA_BATT
+
 FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
 
-fulltext = "<span>{}</span>".format(FA_BATT)
+fulltext = "<span>{}</span>".format(BATT_ICON(percentleft))
 timeleft = ""
 
 if state == "Discharging":
-    fulltext = "<span>{}</span>".format(FA_BATT)
+    fulltext = "<span>{}</span>".format(BATT_ICON(percentleft))
 else:
     fulltext = "<span>{}</span>".format(FA_PLUG)
 
