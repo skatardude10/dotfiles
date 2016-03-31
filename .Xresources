@@ -21,6 +21,8 @@
 *.foreground: #77cc99
 *.depth: 32
 
+Xft.dpi: 90
+
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
