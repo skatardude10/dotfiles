@@ -200,7 +200,6 @@ bar {
     mode hide
     hidden_state hide
     modifier Mod1
-    tray_output none
     height 36
     font pango:Font Awesome, Envy Code R 16
     colors {
