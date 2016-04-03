@@ -17,3 +17,6 @@ alias search='yaourt -Qs'
 alias install='yaourt -S'
 #alias send-layout='cd ~/dotfiles; sh pull-files.sh; git add --all; git commit -m "Update"; git push origin master'
 #alias get-layout='cd ~/dotfiles; git pull; sh push-files.sh'
+
+
+. /home/carder/torch/install/bin/torch-activate
