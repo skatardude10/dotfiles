@@ -24,6 +24,7 @@
 Xft.dpi: 65
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-// URxvt.font:	 xft:Envy Code R 12
+URxvt.font:	 xft:Ubuntu Condensed:Bold:size=12
+URxvt.letterSpace: -3
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard

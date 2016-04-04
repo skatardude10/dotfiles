@@ -201,7 +201,7 @@ bar {
     hidden_state hide
     modifier Mod1
     height 36
-    font pango:Font Awesome, Ubuntu Condensed 16
+    font pango:Font Awesome, Ubuntu Condensed 14
     colors {
         background $bg-color88
         statusline $text-color
@@ -224,7 +224,7 @@ bar {
     tray_output none
     workspace_buttons no
     height 36
-    font pango:Font Awesome, Ubuntu Condensed 16
+    font pango:Font Awesome, Ubuntu Condensed 14
     colors {
         background $bg-color88
         statusline $text-color
