@@ -1,2 +1,2 @@
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
 exec i3
