@@ -24,5 +24,6 @@
 Xft.dpi: 90
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt*font:	xft:Ubuntu Mono Bold 8
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard

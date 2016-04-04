@@ -39,9 +39,9 @@ bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec dmenu_run -o 0.7 -dim 0.1 -p : -fn "Terminus-12:bold"
 
-bindsym $mod+d exec rofi -show run -lines 7 -eh 1 -width 20 -m 0 -padding 1 -opacity "100" -bw 1 -hide-scrollbar -separator-style "none" -bc "$bg-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "Envy Code R 16"
+bindsym $mod+d exec rofi -show run -lines 7 -eh 1 -width 20 -m 0 -padding 1 -opacity "100" -bw 1 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$bg-color" -fg "$text-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "Envy Code R 16"
 
-bindsym $mod+Ctrl+d exec rofi -show window -lines 10 -eh 1 -width 20 -m 0 -padding 4 -opacity "100" -bw 1 -hide-scrollbar -separator-style "none" -bc "$bg-color" -bg "$text-color" -fg "$bg-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "Envy Code R 16"
+bindsym $mod+Ctrl+d exec rofi -show window -lines 10 -eh 1 -width 20 -m 0 -padding 1 -opacity "100" -bw 1 -hide-scrollbar -separator-style "none" -bc "$text-color" -bg "$bg-color" -fg "$text-color" -hlbg "$urgent-bg-color" -hlfg "$text-color" -font "Envy Code R 16"
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -201,7 +201,7 @@ bar {
     hidden_state hide
     modifier Mod1
     height 36
-    font pango:Font Awesome, Envy Code R 16
+    font pango:Font Awesome, Ubuntu Condensed 16
     colors {
         background $bg-color88
         statusline $text-color
@@ -224,7 +224,7 @@ bar {
     tray_output none
     workspace_buttons no
     height 36
-    font pango:Font Awesome, Envy Code R 16
+    font pango:Font Awesome, Ubuntu Condensed 16
     colors {
         background $bg-color88
         statusline $text-color
