@@ -236,3 +236,4 @@ bar {
 
 exec dot-sync
 exec xrdb ~/.Xresources
+exec pkill urxvt
