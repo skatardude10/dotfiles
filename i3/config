@@ -232,3 +232,4 @@ bar {
 }
 
 exec dot-sync
+exec xrdb ~/.Xresources
