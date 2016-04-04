@@ -25,7 +25,7 @@
     ignore_newline = no
 
     #   [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "800x20-35+35"
+    geometry = "800x20-0+35"
     shrink = yes
     transparency = 0
     idle_threshold = 30
