@@ -157,6 +157,8 @@ exec compton --config ~/dotfiles/.comptonrc
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/update.sh
 exec sh ~/dotfiles/updatelong.sh
+exec xbindkeys
+exec mpd-notification -t 3 -o
 
 for_window [instance="dropterm"] floating enable;
 for_window [instance="dropterm"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
