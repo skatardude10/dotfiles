@@ -169,9 +169,9 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 # Window Parameters
 
 for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 gaps inner 0
-gaps outer 35
+gaps outer 0
 #smart_gaps off
 smart_borders on
 
@@ -200,13 +200,13 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
     position top
-    mode hide
+    mode dock
     hidden_state hide
     modifier Mod1
     height 36
     font pango:Font Awesome, Ubuntu Condensed 14
     colors {
-        background $bg-color88
+        background $bg-color55
         statusline $text-color
         separator  $text-color
         #                  border               background              text
@@ -221,7 +221,7 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
     position bottom
-    mode hide
+    mode dock
     hidden_state hide
     modifier Ctrl
     tray_output none
@@ -229,7 +229,7 @@ bar {
     height 36
     font pango:Font Awesome, Ubuntu Condensed 14
     colors {
-        background $bg-color88
+        background $bg-color55
         statusline $text-color
     }
 }

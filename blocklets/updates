@@ -1,0 +1,9 @@
+case $BLOCK_BUTTON in
+    1) urxvt -e yaourt -Syu | echo "Updating...";;
+esac
+
+checkupd() {
+	sh checkupdates | wc -l | tr -d ' '
+}
+
+checkupd

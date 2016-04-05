@@ -22,6 +22,11 @@
 # For Jack/Jack2 users, use "jackplug"
 # For ALSA users, you may use "default" for your primary card
 # or you may use hw:# where # is the number of the card desired
+
+case $BLOCK_BUTTON in
+    1) urxvt -e alsamixer
+esac
+
 MIXER="default"
 [ -n "$(lsmod | grep pulse)" ] && MIXER="pulse"
 [ -n "$(lsmod | grep jack)" ] && MIXER="jackplug"
@@ -67,4 +72,4 @@ case $BLOCK_BUTTON in
   5) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease
 esac
 
-volume | format | tr -d '%' | tr -d ' '
+volume | format | tr -d '%' | tr -d '' |  sed 's/$/  /'

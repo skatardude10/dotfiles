@@ -55,4 +55,4 @@ echo -n "$LABEL$ipaddr"
 [ -n "$speed" ] && echo " $speed" || echo
 
 # short text
-echo "$LABEL$ipaddr"
+echo "$LABEL$ipaddr" |  sed 's/$/  /'

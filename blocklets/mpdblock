@@ -1,13 +1,13 @@
 mus(){ # Current song ..
   mus=`mpc current`
   if [[ $mus ]]; then
-  	mp3=$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n' | tr -d ' ,)(/\-`.[]' | tr [A-Z] [a-z] )
+  	mp3=$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n' | tr -d ',)(/\-`.[]' | tr [A-Z] [a-z] )
   	case $mp3 in
   		*MP3)
-  			title=$(for i in $mp3; do    echo "$mp3"; done | rev | cut -c 4- | rev;) 
+  			title=$(for i in $mp3; do    echo "    $mp3   "; done | rev | cut -c 4- | rev;) 
 		;;
 		*)
-			title=$(for i in $mp3; do    echo "$mp3"; done)
+			title=$(for i in $mp3; do    echo "    $mp3   "; done)
 		;;
 	esac
  	echo "$title"

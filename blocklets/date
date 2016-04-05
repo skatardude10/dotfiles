@@ -1,4 +1,8 @@
 #!/bin/sh
 #~/scripts/i3blocks/blocklets/date.sh
 
-date '+%H%M%S'
+case $BLOCK_BUTTON in
+    1) google-chrome-stable https://calendar.google.com/calendar/ | echo "Opened Calendar"
+esac
+
+date '+%H%M%S' | sed 's/$/  /'

@@ -4,6 +4,10 @@
 #USAGE: weather.sh UKXX0062
 #
 #(c) Michael Seiler 2007
+
+case $BLOCK_BUTTON in
+    1) google-chrome-stable https://www.google.com/search?q=weather | echo "Opening Weather"
+esac
  
 METRIC=0 #Should be 0 or 1; 0 for F, 1 for C
  
