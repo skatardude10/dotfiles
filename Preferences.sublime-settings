@@ -2,12 +2,13 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Colorsublime - Themes/AgolaDark.tmTheme",
+	"font_face": "Ubuntu Condensed",
 	"font_options":
 	[
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 11,
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -19,9 +20,9 @@
 	],
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
-	"material_theme_accent_purple": true,
-	"material_theme_compact_sidebar": true,
-	"material_theme_small_tab": true,
+	"material_theme_accent_purple": false,
+	"material_theme_compact_sidebar": false,
+	"material_theme_small_tab": false,
 	"material_theme_tree_headings": true,
 	"overlay_scroll_bars": "enabled",
 	"theme": "Material-Theme-Darker.sublime-theme"
