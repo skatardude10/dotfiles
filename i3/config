@@ -205,7 +205,7 @@ bar {
     modifier Mod1
     tray_output none
     height 36
-    font pango:Font Awesome, Ubuntu Condensed 14
+    font pango:Font Awesome, Ubuntu Condensed 26
     colors {
         background $bg-color66
         statusline $text-color
@@ -228,7 +228,7 @@ bar {
     tray_output none
     workspace_buttons no
     height 36
-    font pango:Font Awesome, Ubuntu Condensed 14
+    font pango:Font Awesome, Ubuntu Condensed 26
     colors {
         background $bg-color66
         statusline $text-color
