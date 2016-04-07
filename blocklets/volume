@@ -24,7 +24,7 @@
 # or you may use hw:# where # is the number of the card desired
 
 case $BLOCK_BUTTON in
-    1) urxvt -e alsamixer
+    1) pavucontrol
 esac
 
 MIXER="default"
