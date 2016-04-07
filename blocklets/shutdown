@@ -1,4 +1,4 @@
 case $BLOCK_BUTTON in
-    1) i3-msg "exec poweroff" | echo "Shutting Down" ;;
-    3) i3-msg "exec reboot" | echo "Rebooting Now" ;;
+    1) echo "Shutting Down" | sleep 1 && i3-msg "exec poweroff" ;;
+    3) echo "Rebooting Now" | sleep 1 && i3-msg "exec reboot" ;;
 esac
