@@ -207,7 +207,7 @@ bar {
     height 36
     font pango:Font Awesome, Ubuntu Condensed 20
     colors {
-        background $bg-color66
+        background $bg-color00
         statusline $text-color
         separator  $text-color
         #                  border               background              text
@@ -230,7 +230,7 @@ bar {
     height 36
     font pango:Font Awesome, Ubuntu Condensed 20
     colors {
-        background $bg-color66
+        background $bg-color00
         statusline $text-color
     }
 }
