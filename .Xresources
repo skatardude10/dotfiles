@@ -21,7 +21,7 @@
 *.foreground: #77cc99
 *.depth: 32
 
-Xft.dpi: 65
+Xft.dpi: 90
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.font:	 xft:Ubuntu Condensed:Bold:size=12
