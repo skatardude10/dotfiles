@@ -28,3 +28,9 @@ URxvt.font:	 xft:Ubuntu Condensed:Bold:size=12
 URxvt.letterSpace: -3
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
+
+rofi.color-enabled: true
+rofi.color-window: argb:d027144d, #332244, #332244
+rofi.color-normal: argb:027144d, #bb99cc, argb:027144d, argb:027144d, #66eeff
+rofi.color-active: argb:027144d, #4477cc, argb:027144d, argb:027144d, #58cbf8
+rofi.color-urgent: argb:027144d, #cc6655, argb:027144d, argb:027144d, #ffee77

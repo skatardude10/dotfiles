@@ -1,4 +1,3 @@
 case $BLOCK_BUTTON in
-    1) echo "Shutting Down" | sleep 1 && i3-msg "exec poweroff" ;;
-    3) echo "Rebooting Now" | sleep 1 && i3-msg "exec reboot" ;;
+    1) sh ~/dotfiles/power.sh
 esac
