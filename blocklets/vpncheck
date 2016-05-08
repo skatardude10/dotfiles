@@ -1,6 +1,7 @@
-if pgrep "openvpn" > /dev/null
-then
-	echo "vpnOn  "
+#!/bin/bash
+ps cax | grep openvpn > /dev/null
+if [ $? -eq 0 ]; then
+  echo "    "
 else
-	echo "vpnOff  "
+  echo "    "
 fi
