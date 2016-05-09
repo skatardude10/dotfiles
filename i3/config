@@ -197,6 +197,7 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
     output HDMI-0
+    output HDMI-3
     output LVDS1
     position top
     mode dock
@@ -221,6 +222,7 @@ bar {
 	i3bar_command i3bar -t
     status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
     output HDMI-0
+    output HDMI-3
     output LVDS1
     position bottom
     mode dock
