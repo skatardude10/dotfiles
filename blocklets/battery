@@ -11,18 +11,18 @@ percentleft = int(commasplitstatus[1].rstrip("%\n"))
 
 def BATT_ICON(percentleft):
     if percentleft >= 95:
-        FA_BATT = "<span font='FontAwesome'>\uf240</span>"
+        FA_BATT = "<span font='FontAwesome'>\uf240 </span>"
     elif percentleft >= 70:
-        FA_BATT = "<span font='FontAwesome'>\uf241</span>"
+        FA_BATT = "<span font='FontAwesome'>\uf241 </span>"
     elif percentleft >= 45:
-        FA_BATT = "<span font='FontAwesome'>\uf242</span>"
+        FA_BATT = "<span font='FontAwesome'>\uf242 </span>"
     elif percentleft >= 25:
-        FA_BATT = "<span font='FontAwesome'>\uf243</span>"
+        FA_BATT = "<span font='FontAwesome'>\uf243 </span>"
     else:
-        FA_BATT = "<span font='FontAwesome'>\uf244</span>"
+        FA_BATT = "<span font='FontAwesome'>\uf244 </span>"
     return FA_BATT
 
-FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
+FA_PLUG = "<span font='FontAwesome'>\uf1e6 </span>"
 
 fulltext = "<span>{}</span>".format(BATT_ICON(percentleft))
 timeleft = ""
@@ -33,7 +33,7 @@ else:
     fulltext = "<span>{}</span>".format(FA_PLUG)
 
 form =  '<span>{}</span>'
-fulltext += form.format(" ", percentleft)
+fulltext += form.format(percentleft)
 
 print(fulltext, "   ")
 print(fulltext, "   ")
