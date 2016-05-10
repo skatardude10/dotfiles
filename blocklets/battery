@@ -24,13 +24,13 @@ def BATT_ICON(percentleft):
 
 FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
 
-fulltext = "<span>{}</span>".format(BATT_ICON(percentleft))
+fulltext = "<span>{}</span>   ".format(BATT_ICON(percentleft))
 timeleft = ""
 
 if state == "Discharging":
-    fulltext = "<span>{}</span>".format(BATT_ICON(percentleft))
+    fulltext = "<span>{}</span>   ".format(BATT_ICON(percentleft))
 else:
-    fulltext = "<span>{}</span>".format(FA_PLUG)
+    fulltext = "<span>{}</span>   ".format(FA_PLUG)
 
 form =  '<span>{}</span>'
 fulltext += form.format(percentleft)
