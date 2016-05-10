@@ -33,7 +33,7 @@ else:
     fulltext = "<span>{}</span>".format(FA_PLUG)
 
 form =  '<span>{}</span>'
-fulltext += form.format(percentleft)
+fulltext += form.format(" ", percentleft)
 
 print(fulltext, "   ")
 print(fulltext, "   ")
