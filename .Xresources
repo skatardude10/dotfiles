@@ -1,5 +1,6 @@
+*.font: Hack Bold 12
+
 ! == color scheme ==
-*.font: Hack 18 Bold
 *.background: #27144D
 *.foreground: #66eeff
 *.color0: #ffee77

@@ -51,9 +51,9 @@ assign [class="Thunar"] $workspace4
 
 # Window Parameters
 for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 5
 gaps inner 0
-gaps outer 16
+gaps outer 26
 
 # Binds
 bindsym mod1+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 100 100
@@ -187,7 +187,7 @@ bar {
 	hidden_state hide
 	modifier Mod1
 	tray_output none
-	height 36
+	height 26
 	font pango:Font Awesome, $font
 	colors {
 		background 		$background
@@ -210,7 +210,7 @@ bar {
 	modifier Ctrl
 	tray_output none
 	workspace_buttons no
-	height 36
+	height 26
 	font pango:Font Awesome, $font
 	colors {
 		background 		$background
