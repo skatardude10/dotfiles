@@ -35,5 +35,5 @@ else:
 form =  '<span>{}</span>'
 fulltext += form.format(percentleft)
 
-print(fulltext)
-print(fulltext)
+print(fulltext)   
+print(fulltext)   
