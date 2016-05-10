@@ -1,3 +1,5 @@
 case $BLOCK_BUTTON in
-    1) sh ~/dotfiles/power.sh
+    1) urxvt -e nohup sh ~/dotfiles/power.sh &
 esac
+
+echo "power   "

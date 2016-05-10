@@ -1,5 +1,5 @@
 #!/bin/bash
-res=$(echo "logout|reboot|shutdown" | rofi -sep "|" -dmenu -i -p 'Power Menu: ' "" -width 15 -hide-scrollbar -location 5 -padding 15 -sidebar-mode -yoffset -36 -font "Ubuntu Condensed 16" -auto-select)
+res=$(echo "logout|reboot|shutdown" | rofi -sep "|" -dmenu -i -p 'Power Menu: ' "" -hide-scrollbar -width 10 -location 5 -sidebar-mode)
 
 if [ $res = "logout" ]; then
     i3-msg exit

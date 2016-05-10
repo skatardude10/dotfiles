@@ -1,5 +1,5 @@
 #!/bin/bash
-res=$(echo "start|tor" | rofi -sep "|" -dmenu -i -p 'VPN ' "" -width 10 -hide-scrollbar -location 3 -padding 15 -sidebar-mode -yoffset 36 -font "Ubuntu Condensed 16" -auto-select)
+res=$(echo "start|tor" | rofi -sep "|" -dmenu -i -p 'VPN ' "" -width 10 -hide-scrollbar -location 3 -sidebar-mode)
 
 if [ $res = "start" ]; then
     urxvt -e sudo openvpn ~/airvpn/airvpn.ovpn

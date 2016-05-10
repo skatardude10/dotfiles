@@ -37,7 +37,6 @@ URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 
 ! rofi
-rofi.font: Hack Bold 12
 rofi.padding: 15
 rofi.opacity: 90
 rofi.width: 20
