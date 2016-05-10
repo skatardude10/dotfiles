@@ -1,5 +1,7 @@
-*.scrollBar: false
-*.cursorBlink: 1
+! == color scheme ==
+*.font: Hack 18 Bold
+*.background: #27144D
+*.foreground: #66eeff
 *.color0: #ffee77
 *.color1: #aaffff
 *.color2: #ff9966
@@ -16,21 +18,32 @@
 *.color13: #e0b467
 *.color14: #59bde0
 *.color15: #a3dee0
-
-*.background: #27144D
-*.foreground: #66eeff
 *.depth: 32
 
-Xft.dpi: 90
+! Xft
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.font:	 xft:Ubuntu Condensed:Bold:size=12
-URxvt.letterSpace: -3
-URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard
+! URxvt
+URxvt.font:	 xft:Hack:Bold:size=12
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+URxvt.cursorBlink: 1
 
+! rofi
+rofi.font: Hack Bold 12
+rofi.padding: 15
+rofi.opacity: 90
+rofi.width: 20
 rofi.color-enabled: true
-rofi.color-window: argb:d027144d, #332244, #332244
-rofi.color-normal: argb:027144d, #bb99cc, argb:027144d, argb:027144d, #66eeff
-rofi.color-active: argb:027144d, #4477cc, argb:027144d, argb:027144d, #58cbf8
-rofi.color-urgent: argb:027144d, #cc6655, argb:027144d, argb:027144d, #ffee77
+! State:				background, 		foreground,  	background alt,	background sel,	foreground sel	
+rofi.color-normal: 		argb:027144d, 		#bb99cc, 	argb:027144d, 		argb:027144d, 		#66eeff
+rofi.color-active: 		argb:027144d, 		#4477cc, 	argb:027144d, 		argb:027144d, 		#58cbf8
+rofi.color-urgent: 		argb:027144d, 		#cc6655, 	argb:027144d, 		argb:027144d, 		#ffee77
+!				background, 		border,	border
+rofi.color-window:   		argb:d027144d, 	#332244, 	#332244

@@ -1,16 +1,37 @@
 # Init
-# Init
 set $mod Mod1
 floating_modifier $mod
 focus_on_window_activation urgent
+set_from_resource $font font
+font pango: $font
 
+#Color Scheme
+set_from_resource $background background
+set_from_resource $foreground foreground
+set_from_resource $color0 color0
+set_from_resource $color1 color1
+set_from_resource $color2 color2
+set_from_resource $color3 color3
+set_from_resource $color4 color4
+set_from_resource $color5 color5
+set_from_resource $color6 color6
+set_from_resource $color7 color7
+set_from_resource $color8 color8
+set_from_resource $color9 color9
+set_from_resource $color10 color10
+set_from_resource $color11 color11
+set_from_resource $color12 color12
+set_from_resource $color13 color13
+set_from_resource $color14 color14
+set_from_resource $color15 color15
 
-# Default Font
+# window colors		border		background		text		indicator
+client.focused 			$color3 	$background		$foreground	$color0
+client.unfocused  		$background	$background		$foreground	$color0
+client.focused_inactive 	$background	$background		$foreground	$color0
+client.urgent 			$color4 	$background		$foreground	$color13
 
-font pango:Envy Code R 16
-
-# Workspaces
-
+# Workspaces and Assignments
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
@@ -21,7 +42,6 @@ set $workspace7 "7 "
 set $workspace8 "8 "
 set $workspace9 "9 "
 set $workspace10 "10 "
-
 assign [class="google-chrome"] $workspace2
 assign [class="Firefox"] $workspace2
 assign [class="Steam"] $workspace5
@@ -29,6 +49,11 @@ assign [class="URxvt"] $workspace3
 assign [class="Subl3"] $workspace1
 assign [class="Thunar"] $workspace4
 
+# Window Parameters
+for_window [class="Gimp"] floating enable, border normal
+for_window [class="^.*"] border pixel 0
+gaps inner 0
+gaps outer 16
 
 # Binds
 bindsym mod1+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 100 100
@@ -38,9 +63,9 @@ bindsym $mod+Shift+Return exec subl3; workspace $workspace1
 bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
 bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+d exec rofi -show ssh -width 20 -location 7 -padding 15 -font "Ubuntu Condensed 16"
-bindsym $mod+Tab exec rofi -show window -lines 10 -eh 1 -width 20 -padding 15 -font "Ubuntu Condensed 16"
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -width 20 -location 7 -padding 15 -sidebar-mode -font "Ubuntu Condensed 16"'
+bindsym $mod+Shift+d exec rofi -show ssh -location 7
+bindsym $mod+Tab exec rofi -show window -lines 10
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run  -location 7  -sidebar-mode'
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -68,20 +93,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+r mode "resize"
-mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
@@ -106,136 +118,104 @@ bindsym $mod+Ctrl+semicolon move workspace to output right
 bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+Ctrl+j move workspace to output left
 bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+r mode "resize"
+mode "resize" {
+		bindsym j resize shrink width 10 px or 10 ppt
+		bindsym k resize grow height 10 px or 10 ppt
+		bindsym l resize shrink height 10 px or 10 ppt
+		bindsym semicolon resize grow width 10 px or 10 ppt
+		bindsym Left resize shrink width 10 px or 10 ppt
+		bindsym Down resize grow height 10 px or 10 ppt
+		bindsym Up resize shrink height 10 px or 10 ppt
+		bindsym Right resize grow width 10 px or 10 ppt
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
 
-#Gaps Stuff
-
+#Gaps Modification
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
-
 mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+		bindsym o      mode "$mode_gaps_outer"
+		bindsym i      mode "$mode_gaps_inner"
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 }
-
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+		bindsym plus  gaps inner current plus 5
+		bindsym minus gaps inner current minus 5
+		bindsym 0     gaps inner current set 0
+		bindsym Shift+plus  gaps inner all plus 5
+		bindsym Shift+minus gaps inner all minus 5
+		bindsym Shift+0     gaps inner all set 0
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+		bindsym plus  gaps outer current plus 5
+		bindsym minus gaps outer current minus 5
+		bindsym 0     gaps outer current set 0
+		bindsym Shift+plus  gaps outer all plus 5
+		bindsym Shift+minus gaps outer all minus 5
+		bindsym Shift+0     gaps outer all set 0
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 }
 
 # Auto-Start Programs
-
 exec sh ~/dotfiles/wallpaper-script.sh 
 exec sh ~/dotfiles/drop-term.sh 
 exec compton --config ~/dotfiles/.comptonrc 
-# exec xautolock -time 10 -notify 0 -bell 0 -locker lock
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/update.sh
 exec sh ~/dotfiles/updatelong.sh
 exec mpd
 exec xbindkeys
 exec mpd-notification
-
 for_window [instance="dropterm"] floating enable;
 for_window [instance="dropterm"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
 bindsym $mod+grave [instance="dropterm"] scratchpad show
 
-
-# Window Parameters
-
-for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 0
-gaps inner 5
-gaps outer 0
-#smart_gaps off
-smart_borders on
-
-#Colors
-set $bg-color            #27144D
-set $inactive-bg-color   #332244
-set $text-color          #66eeff
-set $inactive-text-color #66aaff
-set $urgent-bg-color     #553344
-set $border-color        #337777
-set $border2-color       #337777
-set $indicator-color     #aaee99
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $border-color       $border2-color     $text-color          $indicator-color  
-client.unfocused        $border-color       $inactive-bg-color $inactive-text-color $border-color 
-client.focused_inactive $border-color       $inactive-bg-color $inactive-text-color $border-color
-client.urgent           $border-color       $urgent-bg-color   $text-color          $border-color 
-
-
-# Bar Baby
-
+# Bars
 bar {
 	i3bar_command i3bar -t
-    status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
-    output HDMI-0
-    output HDMI-3
-    output LVDS1
-    position top
-    mode dock
-    hidden_state show
-    modifier Mod1
-    tray_output none
-    height 36
-    font pango:Font Awesome, Ubuntu Condensed 20
-    colors {
-        background $bg-color88
-        statusline $text-color
-        separator  $text-color
-        #                  border               background              text
-        focused_workspace  $bg-color88            $bg-color88               $text-color 
-        active_workspace   $bg-color88            $bg-color88               $inactive-text-color
-        inactive_workspace $bg-color88            $bg-color88               $inactive-text-color 
-        urgent_workspace   $bg-color88            $bg-color88               $text-color 
-    }
+	status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
+	position top
+	mode hide
+	hidden_state hide
+	modifier Mod1
+	tray_output none
+	height 36
+	font pango:Font Awesome, $font
+	colors {
+		background 		$background
+		statusline 		$foreground
+		separator 		$color7
+		#                  		border 		background 		text
+		focused_workspace 	 $background	$background		$foreground
+		active_workspace 	$background	$background		$color7
+		inactive_workspace 	$background	$background		$color7
+		urgent_workspace 	$background	$background		$color4
+	}
 }
 
 bar {
 	i3bar_command i3bar -t
-    status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
-    output HDMI-0
-    output HDMI-3
-    output LVDS1
-    position bottom
-    mode dock
-    hidden_state show
-    modifier Ctrl
-    tray_output none
-    workspace_buttons no
-    height 36
-    font pango:Font Awesome, Ubuntu Condensed 20
-    colors {
-        background $bg-color88
-        statusline $text-color
-    }
+	status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
+	position bottom
+	mode hide
+	hidden_state hide
+	modifier Ctrl
+	tray_output none
+	workspace_buttons no
+	height 36
+	font pango:Font Awesome, $font
+	colors {
+		background 		$background
+		statusline 		$foreground
+	}
 }
 
 exec dot-sync
