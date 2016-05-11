@@ -167,12 +167,12 @@ mode "$mode_gaps_outer" {
 }
 
 # Auto-Start Programs
-exec sh ~/dotfiles/wallpaper-script.sh 
-exec sh ~/dotfiles/drop-term.sh 
-exec compton --config ~/dotfiles/.comptonrc 
+exec sh ~/dotfiles/scripts/wallpaper-script.sh 
+exec sh ~/dotfiles/scripts/drop-term.sh 
+exec compton --config ~/dotfiles/rc/.comptonrc 
 exec sh ~/.local-exec.sh
-exec sh ~/dotfiles/update.sh
-exec sh ~/dotfiles/updatelong.sh
+exec sh ~/dotfiles/scripts/update.sh
+exec sh ~/dotfiles/scripts/updatelong.sh
 exec mpd
 exec xbindkeys
 exec mpd-notification
@@ -183,7 +183,7 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 # Bars
 bar {
 	i3bar_command i3bar -t
-	status_command i3blocks -c ~/dotfiles/i3/.i3blocks.conf
+	status_command i3blocks -c ~/dotfiles/config/i3/.i3blocks.conf
 	position top
 	mode hide
 	hidden_state hide
@@ -205,7 +205,7 @@ bar {
 
 bar {
 	i3bar_command i3bar -t
-	status_command i3blocks -c ~/dotfiles/i3/.i3blocksbottom.conf
+	status_command i3blocks -c ~/dotfiles/config/i3/.i3blocksbottom.conf
 	position bottom
 	mode hide
 	hidden_state hide
