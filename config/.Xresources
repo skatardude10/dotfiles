@@ -1,4 +1,5 @@
 *.font: Hack Bold 12
+i3bar.height: 36
 
 ! == color scheme ==
 *.background: #27144D
