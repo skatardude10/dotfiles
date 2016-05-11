@@ -5,6 +5,6 @@ if [ $res = "start" ]; then
     urxvt -e sudo openvpn ~/airvpn/airvpn.ovpn
 fi
 if [ $res = "tor" ]; then
-    urxvt -e sh ~/dotfiles/blocklets/vpntor
+    urxvt -e sh ~/dotfiles/scripts/blocklets/vpntor
 fi
 exit 0

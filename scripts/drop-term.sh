@@ -5,6 +5,6 @@ while true; do
 		then
 			sleep 15
 		else
-			urxvt -name dropterm -geometry 125x20
+			urxvt -name dropterm -geometry 115x20
 	fi
 done

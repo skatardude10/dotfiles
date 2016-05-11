@@ -1,5 +1,4 @@
 #!/bin/sh
-#~/scripts/i3blocks/blocklets/date.sh
 
 case $BLOCK_BUTTON in
     1) google-chrome-stable https://calendar.google.com/calendar/ | echo "Opened Calendar"

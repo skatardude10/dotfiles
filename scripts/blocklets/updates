@@ -1,5 +1,5 @@
 case $BLOCK_BUTTON in
-    1) urxvt -e nohup sh ~/dotfiles/blocklets/update &
+    1) urxvt -e nohup sh ~/dotfiles/scripts/blocklets/update &
 esac
 
 checkupd() {

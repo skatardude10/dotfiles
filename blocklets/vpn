@@ -1,5 +1,0 @@
-case $BLOCK_BUTTON in
-    1) urxvt -e nohup sh ~/dotfiles/vpn.sh &
-esac
-
-echo "vpn  "

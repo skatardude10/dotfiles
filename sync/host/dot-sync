@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/dotfiles; sh pull-files.sh; git add --all; git commit -m "Automatic Update"; git push origin master
+cd ~/dotfiles/scripts; sh pull-files.sh; git add --all; git commit -m "Automatic Update"; git push origin master
