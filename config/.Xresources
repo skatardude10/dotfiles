@@ -1,7 +1,13 @@
-*.font: Hack Bold 12
+! == Define Font == !
+#define FNT Hack
+#define STYL Bold
+#define SIZ 12
+
+! == Set Params == !
+*.font: FNT STYL SIZ
 i3bar.height: 36
 
-! == color scheme ==
+! == Color Scheme == !
 *.background: #27144D
 *.foreground: #66eeff
 *.color0: #ffee77
@@ -22,7 +28,7 @@ i3bar.height: 36
 *.color15: #a3dee0
 *.depth: 32
 
-! Xft
+! == Xft == !
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
@@ -31,18 +37,18 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-! URxvt
-URxvt.font:	 xft:Hack:Bold:size=12
+! == URxvt == !
+URxvt.font:	 xft:FNT:STYL:size=SIZ
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 
-! rofi
+! == Rofi == !
 rofi.padding: 15
 rofi.opacity: 90
 rofi.width: 20
 rofi.color-enabled: true
-! State:				background, 		foreground,  	background alt,	background sel,	foreground sel	
+! State:				background, 		foreground,  	background alt,	background sel,	foreground sel
 rofi.color-normal: 		argb:027144d, 		#bb99cc, 	argb:027144d, 		argb:027144d, 		#66eeff
 rofi.color-active: 		argb:027144d, 		#4477cc, 	argb:027144d, 		argb:027144d, 		#58cbf8
 rofi.color-urgent: 		argb:027144d, 		#cc6655, 	argb:027144d, 		argb:027144d, 		#ffee77
