@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-if [[ $(ls /sys/class/net) =~ .*"wlp0s26u1u1".* ]] 
+if [[ $(ls /sys/class/net) =~ .*"wlp3s0u2".* ]] 
 then
 	iface='wlp3s0u2';
 else
