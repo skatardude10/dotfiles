@@ -46,7 +46,7 @@ set $workspace8 "8 "
 set $workspace9 "9 "
 set $workspace10 "10 "
 assign [class="google-chrome"] $workspace2
-assign [class="VLC media player"] $workspace2
+assign [class="Vlc"] $workspace2
 assign [class="Firefox"] $workspace2
 assign [class="Steam"] $workspace5
 assign [class="URxvt"] $workspace3
