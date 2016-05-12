@@ -8,24 +8,43 @@
 i3bar.height: 36
 
 ! == Color Scheme == !
-*.background: #27144D
-*.foreground: #66eeff
-*.color0: #ffee77
-*.color1: #aaffff
-*.color2: #ff9966
-*.color3: #66eeff
-*.color4: #cc6655
-*.color5: #66aaff
-*.color6: #bb99cc
-*.color7: #4477cc
-*.color8: #806e69
-*.color9: #a072c8
-*.color10: #9983c8
-*.color11: #8592c8
-*.color12: #9fabca
-*.color13: #e0b467
-*.color14: #59bde0
-*.color15: #a3dee0
+#define xbackground #27144D
+#define xforeground #66eeff
+#define xcolor0 #ffee77
+#define xcolor1 #aaffff
+#define xcolor2 #ff9966
+#define xcolor3 #66eeff
+#define xcolor4 #cc6655
+#define xcolor5 #66aaff
+#define xcolor6 #bb99cc
+#define xcolor7 #4477cc
+#define xcolor8 #806e69
+#define xcolor9 #a072c8
+#define xcolor10 #9983c8
+#define xcolor11 #8592c8
+#define xcolor12 #9fabca
+#define xcolor13 #e0b467
+#define xcolor14 #59bde0
+#define xcolor15 #a3dee0
+
+ *.background: xbackground
+ *.foreground: xforeground
+ *.color0: xcolor0
+ *.color1: xcolor1
+ *.color2: xcolor2
+ *.color3: xcolor3
+ *.color4: xcolor4
+ *.color5: xcolor5
+ *.color6: xcolor6
+ *.color7: xcolor7
+ *.color8: xcolor8
+ *.color9: xcolor9
+ *.color10: xcolor10
+ *.color11: xcolor11
+ *.color12: xcolor12
+ *.color13: xcolor13
+ *.color14: xcolor14
+ *.color15: xcolor15
 *.depth: 32
 
 ! == Xft == !
@@ -45,12 +64,11 @@ URxvt.cursorBlink: 1
 
 ! == Rofi == !
 rofi.padding: 15
-rofi.opacity: 90
 rofi.width: 20
+rofi.bw: 2
 rofi.color-enabled: true
-! State:				background, 		foreground,  	background alt,	background sel,	foreground sel
-rofi.color-normal: 		argb:027144d, 		#bb99cc, 	argb:027144d, 		argb:027144d, 		#66eeff
-rofi.color-active: 		argb:027144d, 		#4477cc, 	argb:027144d, 		argb:027144d, 		#58cbf8
-rofi.color-urgent: 		argb:027144d, 		#cc6655, 	argb:027144d, 		argb:027144d, 		#ffee77
-!				background, 		border,	border
-rofi.color-window:   		argb:d027144d, 	#332244, 	#332244
+rofi.separator-style: solid
+rofi.color-window: xbackground, xcolor4, xcolor2
+rofi.color-normal: xbackground, xcolor9, xbackground, xbackground, xcolor5
+rofi.color-active: xbackground, xcolor1, xbackground xbackground, xcolor2
+rofi.color-urgent: xbackground, xcolor4, xbackground, xbackground, xcolor0

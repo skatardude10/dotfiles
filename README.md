@@ -1,2 +1,4 @@
 # dotfiles
-My personal dotfiles for synchronization between my PCs
+Personal dotfiles for synchronization.
+
+![screen](screen.png)

@@ -69,7 +69,7 @@ bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec rofi -show ssh -location 7
 bindsym $mod+Tab exec rofi -show window -lines 10
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run  -location 7  -sidebar-mode'
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -p "Applications:" -location 7  -sidebar-mode'
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
