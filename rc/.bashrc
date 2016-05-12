@@ -31,5 +31,5 @@ alias steamfix='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.
 
 case $HOSTNAME in
   (*Desktop)   . /home/carder/torch/install/bin/torch-activate; echo "Desktop Config";;
-  (*laptop)   alias tv='sh ~/Documents/setup-tv-bluetooth.sh' echo "Laptop Config";;
+  (*laptop)   alias tv='sh ~/Documents/setup-tv-bluetooth.sh'; echo "Laptop Config";;
 esac
