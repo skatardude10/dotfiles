@@ -25,10 +25,15 @@ alias updatefast='bb-wrapper -Syu --aur'
 alias search='yaourt -Qs'
 alias install='yaourt -S'
 cdls() { cd "$@" && ls; }
-alias tv='sh ~/Documents/setup-tv-bluetooth.sh'
 alias steamfix='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete'
 #alias send-layout='cd ~/dotfiles; sh pull-files.sh; git add --all; git commit -m "Update"; git push origin master'
 #alias get-layout='cd ~/dotfiles; git pull; sh push-files.sh'
+
+if [[ "$HOSTNAME" == *Laptop ]]; then
+    alias tv='sh ~/Documents/setup-tv-bluetooth.sh'
+else
+    echo "Not Laptop!"
+fi
 
 if [ -f /home/carder/torch/install/bin/torch-activate ]; then
     . /home/carder/torch/install/bin/torch-activate
