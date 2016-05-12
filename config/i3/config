@@ -186,6 +186,7 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 bar {
 	i3bar_command i3bar -t
 	status_command i3blocks -c ~/dotfiles/config/i3/.i3blocks.conf
+	strip_workspace_numbers yes
 	position top
 	mode hide
 	hidden_state hide
@@ -194,14 +195,14 @@ bar {
 	height $barheight
 	font pango:Font Awesome, $font
 	colors {
-		background 		$background
+		background 		$background00
 		statusline 		$foreground
 		separator 		$color7
 		#                  		border 		background 		text
-		focused_workspace 	$background	$background		$foreground
-		active_workspace 	$background	$background		$color7
-		inactive_workspace 	$background	$background		$color7
-		urgent_workspace 	$background	$background		$color4
+		focused_workspace 	$background00	$background00		$foreground
+		active_workspace 	$background00	$background00		$color7
+		inactive_workspace 	$background00	$background00		$color7
+		urgent_workspace 	$background00	$background00		$color4
 	}
 }
 
@@ -217,7 +218,7 @@ bar {
 	height $barheight
 	font pango:Font Awesome, $font
 	colors {
-		background 		$background
+		background 		$background00
 		statusline 		$foreground
 	}
 }
