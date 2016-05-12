@@ -56,8 +56,8 @@ assign [class="Thunar"] $workspace4
 # Window Parameters
 for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 1
-gaps inner 0
-gaps outer $barheight
+gaps inner $barheight
+gaps outer 0
 
 # Binds
 bindsym mod1+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 100 100
@@ -186,7 +186,7 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 bar {
 	i3bar_command i3bar -t
 	status_command i3blocks -c ~/dotfiles/config/i3/.i3blocks.conf
-	strip_workspace_numbers yes
+	strip_workspace_numbers no
 	position top
 	mode hide
 	hidden_state hide

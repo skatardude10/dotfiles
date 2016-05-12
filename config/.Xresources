@@ -1,11 +1,11 @@
 ! == Define Font == !
 #define FNT Hack
-#define STYL Bold
-#define SIZ 12
+#define STYL
+#define SIZ 10
 
 ! == Set Params == !
 *.font: FNT STYL SIZ
-i3bar.height: 36
+i3bar.height: 20
 
 ! == Color Scheme == !
 #define xbackground #27144D
@@ -57,17 +57,17 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! == URxvt == !
-URxvt.font:	 xft:FNT:STYL:size=SIZ
+URxvt.font:	 xft:FNT:size=SIZ
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 
 ! == Rofi == !
-rofi.padding: 15
+rofi.padding: 10
 rofi.width: 20
-rofi.bw: 2
+rofi.bw: 1
 rofi.color-enabled: true
-rofi.separator-style: solid
+rofi.separator-style: dashed
 rofi.color-window: xbackground, xcolor4, xcolor2
 rofi.color-normal: xbackground, xcolor9, xbackground, xbackground, xcolor5
 rofi.color-active: xbackground, xcolor1, xbackground xbackground, xcolor0
