@@ -29,7 +29,7 @@ alias steamfix='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.
 #alias send-layout='cd ~/dotfiles; sh pull-files.sh; git add --all; git commit -m "Update"; git push origin master'
 #alias get-layout='cd ~/dotfiles; git pull; sh push-files.sh'
 
-if [[ "$HOSTNAME" == *Laptop ]]; then
+if [ "$HOSTNAME" == *Laptop ]; then
     alias tv='sh ~/Documents/setup-tv-bluetooth.sh'
 else
     echo "Not Laptop!"
