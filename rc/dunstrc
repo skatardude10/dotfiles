@@ -1,6 +1,6 @@
 [global]
-    font = Ubuntu Condensed 16
-    
+    font = Hack 10
+     
     # Allow a small subset of html markup:
     #   <b>bold</b>
     #   <i>italic</i>
@@ -25,7 +25,7 @@
     ignore_newline = no
 
     #   [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "800x20-0+35"
+    geometry = "800x20-0+0"
     shrink = yes
     transparency = 0
     idle_threshold = 30
@@ -34,7 +34,7 @@
     sticky_history = yes
     history_length = 20
     show_indicators = no
-    line_height = 12
+    line_height = 5
     separator_height = 0
     padding = 5
     horizontal_padding = 5
@@ -47,7 +47,7 @@
 
 [frame]
     width = 1
-    color = "#224444"
+     color = "#1C1E20"
 
 [shortcuts]
     close = ctrl+space
@@ -56,18 +56,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#001122"
-    foreground = "#55aabb"
+    background = "#1C1E20"
+    foreground = "#4433bb"
     timeout = 120
 
 [urgency_normal]
-    background = "#001122"
-    foreground = "#55aabb"
+    background = "#1C1E20"
+    foreground = "#4433bb"
     timeout = 120
 
 [urgency_critical]
-    background = "#001122"
-    foreground = "#aaee99"
+    background = "#1C1E20"
+    foreground = "#4433bb"
     timeout = 120
 
 [music]
