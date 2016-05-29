@@ -171,7 +171,7 @@ mode "$mode_gaps_outer" {
 # Auto-Start Programs
 exec sh ~/dotfiles/scripts/wallpaper-script.sh 
 exec sh ~/dotfiles/scripts/drop-term.sh 
-#exec compton --config ~/dotfiles/rc/.comptonrc 
+exec compton --config ~/dotfiles/rc/.comptonrc 
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/scripts/update.sh
 exec sh ~/dotfiles/scripts/updatelong.sh
