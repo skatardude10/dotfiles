@@ -68,7 +68,7 @@ rofi.width: 20
 rofi.bw: 1
 rofi.color-enabled: true
 rofi.separator-style: dashed
-rofi.color-window: xbackground, xcolor4, xcolor2
+rofi.color-window: xbackground, xbackground, xcolor2
 rofi.color-normal: xbackground, xcolor9, xbackground, xbackground, xcolor5
 rofi.color-active: xbackground, xcolor1, xbackground xbackground, xcolor0
 rofi.color-urgent: xbackground, xcolor4, xbackground, xbackground, xcolor0
