@@ -8,24 +8,24 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #27144D
-#define xforeground #66eeff
-#define xcolor0 #ffee77
-#define xcolor1 #aaffff
-#define xcolor2 #ff9966
-#define xcolor3 #66eeff
-#define xcolor4 #cc6655
-#define xcolor5 #66aaff
-#define xcolor6 #bb99cc
-#define xcolor7 #4477cc
-#define xcolor8 #806e69
-#define xcolor9 #a072c8
-#define xcolor10 #9983c8
-#define xcolor11 #8592c8
-#define xcolor12 #9fabca
-#define xcolor13 #e0b467
-#define xcolor14 #59bde0
-#define xcolor15 #a3dee0
+#define xbackground #1C1E20
+#define xforeground #55A9C8
+#define xcolor0 #66dd33
+#define xcolor1 #9944cc
+#define xcolor2 #ee4488
+#define xcolor3 #4433bb
+#define xcolor4 #33ccaa
+#define xcolor5 #ee4488
+#define xcolor6 #553355
+#define xcolor7 #cc3322
+#define xcolor8 #557733
+#define xcolor9 #336655
+#define xcolor10 #dd55cc
+#define xcolor11 #883344
+#define xcolor12 #883333
+#define xcolor13 #A1C864
+#define xcolor14 #8B7BC8
+#define xcolor15 #61A053
 
  *.background: xbackground
  *.foreground: xforeground

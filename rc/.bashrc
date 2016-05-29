@@ -12,11 +12,11 @@ alias steamfix='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.
 cdls() { cd "$@" && ls; }
 
 # == Colors == #
-color1="\[$(tput setaf 4)\]"
-color2="\[$(tput setaf 2)\]"
-color3="\[$(tput setaf 5)\]"
-color4="\[$(tput setaf 9)\]"
-color5="\[$(tput setaf 11)\]"
+color1="\[$(tput setaf 0)\]"
+color2="\[$(tput setaf 1)\]"
+color3="\[$(tput setaf 2)\]"
+color4="\[$(tput setaf 3)\]"
+color5="\[$(tput setaf 4)\]"
 RESET="\[$(tput sgr0)\]"
 PS1="${color1}[\$(date +%k%M%S)] ${color2}[\u@\h] ${color3}[\$(ls -l | grep ^- | wc -l) files] ${color5}[\w] ${color4}\n● ${RESET}"
 
