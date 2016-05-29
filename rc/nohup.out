@@ -19,3 +19,4 @@ restack_win(0x02400004, 0x0240003e): Failed to found new above window.
 restack_win(0x02000004, 0x0200003e): Failed to found new above window.
 restack_win(0x02000004, 0x02000040): Failed to found new above window.
 restack_win(0x02000003, 0x02000029): Failed to found new above window.
+restack_win(0x02400004, 0x02400040): Failed to found new above window.
