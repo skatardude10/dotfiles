@@ -46,7 +46,7 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 9,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -64,5 +64,5 @@
 	"material_theme_tree_headings": true,
 	"mouse_wheel_tabswitch": true,
 	"overlay_scroll_bars": "enabled",
-	"theme": "Seti.sublime-theme"
+	"theme": "SetiD.sublime-theme"
 }
