@@ -59,5 +59,4 @@ visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "FIFO"
 visualizer_sync_interval = "15"
 visualizer_type = "spectrum" (spectrum/wave)
-visualizer_look = "◆▋"
-visualizer_color = 114, 73, 143, 209
+visualizer_look = "◆+"
