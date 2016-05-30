@@ -51,3 +51,39 @@
 # Launch Rofi via Menu Button
 "rofi -show run -lines 3 -eh 1 -width 20 -m 0 -padding 20 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "#221144" -bg "#221144" -fg "#aa3355" -hlbg "#ee5555" -hlfg "#221144" -font "System San Francisco Display 10""
 	Menu
+
+# Pianobar Binds
+# Start, Pause, or Play Pianobar
+"sh ~/.config/pianobar/control-pianobar.sh p"
+	m:0x40 + c:33
+	Mod4 + p
+
+# Quit Pianobar
+"sh ~/.config/pianobar/control-pianobar.sh quit"
+	m:0x40 + c:24
+	Mod4 + q
+
+# Pianobar Next Song
+"sh ~/.config/pianobar/control-pianobar.sh next"
+	m:0x40 + c:114
+	Mod4 + Right
+
+# Pianobar Previous Song
+"sh ~/.config/pianobar/control-pianobar.sh history"
+	m:0x40 + c:113
+	Mod4 + Left
+
+# Pianobar Love
+"sh ~/.config/pianobar/control-pianobar.sh love"
+	m:0x40 + c:111
+	Mod4 + Up
+
+# Pianobar Hate
+"sh ~/.config/pianobar/control-pianobar.sh hate"
+	m:0x41 + c:116
+	Shift+Mod4 + Down
+
+# Pianobar Download
+"sh ~/.config/pianobar/control-pianobar.sh download"
+	m:0x40 + c:116
+	Mod4 + Down
