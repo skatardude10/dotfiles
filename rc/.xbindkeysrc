@@ -1,0 +1,53 @@
+# Increase Volume
+"ponymix -d 1 increase 2; ponymix -d 0 increase 2; pkill -RTMIN+10 i3blocks"
+    XF86AudioRaiseVolume
+
+# Decrease Volume
+"ponymix -d 1 decrease 2; ponymix -d 0 decrease 2; pkill -RTMIN+10 i3blocks"
+    XF86AudioLowerVolume
+
+# Increase Volume
+"ponymix -d 1 increase 5; ponymix -d 0 increase 5; pkill -RTMIN+10 i3blocks"
+    m:0x44 + c:111
+    Control+Mod4 + Up
+
+# Decrease Volume
+"ponymix -d 1 decrease 5; ponymix -d 0 decrease 5; pkill -RTMIN+10 i3blocks"
+    m:0x44 + c:116
+    Control+Mod4 + Down
+
+# Mute Audio
+"ponymix -d 1 toggle; ponymix -d 0 toggle; pkill -RTMIN+10 i3blocks"
+	XF86AudioMute
+
+# Take Screenshot
+"scrot"
+	Print
+
+# Pause Music
+"MPD_HOST=127.0.0.1 mpc toggle; pkill -RTMIN+10 i3blocks"
+	Pause
+
+# Next Song
+"MPD_HOST=127.0.0.1 mpc next; pkill -RTMIN+10 i3blocks"
+	m:0x4 + c:114
+	Control + Right
+
+# Previous Song
+"MPD_HOST=127.0.0.1 mpc prev; pkill -RTMIN+10 i3blocks"
+	m:0x4 + c:113
+	Control + Left
+
+# MPC Volume Up
+"MPD_HOST=127.0.0.1 mpc volume +5; pkill -RTMIN+10 i3blocks"
+	m:0x4 + c:111
+	Control + Up
+
+# MPC Volume Down
+"MPD_HOST=127.0.0.1 mpc volume -5; pkill -RTMIN+10 i3blocks"
+	m:0x4 + c:116
+	Control + Down
+
+# Launch Rofi via Menu Button
+"rofi -show run -lines 3 -eh 1 -width 20 -m 0 -padding 20 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "#221144" -bg "#221144" -fg "#aa3355" -hlbg "#ee5555" -hlfg "#221144" -font "System San Francisco Display 10""
+	Menu
