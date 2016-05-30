@@ -1,0 +1,12 @@
+/usr/share/deskcon-server/notificationmanager.py:7: PyGIWarning: Gtk was imported without specifying a version first. Use gi.require_version('Gtk', '3.0') before import to ensure that the right version gets loaded.
+  from gi.repository import Gio, GLib, Gtk
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "deskcon-server", line 309, in run
+    self.sslserversocket.bind(('', SECUREPORT))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 98] Address already in use
+
