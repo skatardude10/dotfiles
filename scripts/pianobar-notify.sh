@@ -217,7 +217,7 @@ case "$1" in
 		# $notify "Success" "I think it worked. Try running pianobar again."
 		# fi
 	   elif [ "$wRet" -ne 1 ]; then
-		  $notify "Login ERROR 2" "$wRetStr"
+		  $notify -t 1000 "Login" "$wRetStr"
 	   else
 		  $notify -t 2000 "Login Successful" "Fetching Stations..."
 	   fi
