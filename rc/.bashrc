@@ -2,6 +2,10 @@
 # == If not running interactively, don't do anything == #
 [[ $- != *i* ]] && return
 
+export HISTCONTROL=ignoredups:erasedups
+export HISTFILESIZE=
+export HISTSIZE=
+
 # == Alias == #
 alias ls='ls -a --color=auto'
 alias update='yaourt -Syu'
