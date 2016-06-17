@@ -46,7 +46,7 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 8,
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage"

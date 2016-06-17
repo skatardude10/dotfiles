@@ -11,11 +11,11 @@ tooltip_fg_color:#55A9C8
 titlebar_bg_color:#1C1E20
 titlebar_fg_color:#55A9C8
 menubar_bg_color:#1C1E20
-menubar_fg_color:#33ccaa
+menubar_fg_color:#55A9C8
 toolbar_bg_color:#1C1E20
-toolbar_fg_color:#33ccaa
+toolbar_fg_color:#55A9C8
 menu_bg_color:#1C1E20
-menu_fg_color:#33ccaa
+menu_fg_color:#55A9C8
 panel_bg_color:#1C1E20
 panel_fg_color:#55A9C8
 link_color:#8EC3EB"
