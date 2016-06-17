@@ -8,7 +8,7 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #1C1E20
+#define xbackground #000000
 #define xforeground #55A9C8
 #define xcolor0 #66dd33
 #define xcolor1 #9944cc
