@@ -25,9 +25,9 @@
     ignore_newline = no
 
     #   [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "800x20-0+0"
+    geometry = "800x20-0-0"
     shrink = yes
-    transparency = 0
+    transparency = 20
     idle_threshold = 30
     monitor = 0
     follow = keyboard
