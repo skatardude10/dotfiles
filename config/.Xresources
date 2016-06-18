@@ -63,9 +63,11 @@ URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 
 ! == Rofi == !
-rofi.padding: 10
+rofi.padding: 400
 rofi.width: 20
 rofi.bw: 1
+rofi.opacity: 90
+rofi.fullscreen: true
 rofi.color-enabled: true
 rofi.separator-style: dashed
 rofi.color-window: xbackground, xbackground, xcolor2
