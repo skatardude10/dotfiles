@@ -35,16 +35,16 @@ client.placeholder      		$background 	$background 	$color7		$background   	$bac
 client.background 				$background
 
 # Workspaces and Assignments
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 " 
-set $workspace7 "7 " 
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6" 
+set $workspace7 "7" 
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 assign [class="google-chrome"] $workspace2
 assign [class="Vlc"] $workspace2
 assign [class="Firefox"] $workspace2
@@ -67,9 +67,9 @@ bindsym $mod+Shift+Return exec subl3; workspace $workspace1
 bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
 bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+d exec rofi -show ssh -location 7
+bindsym $mod+Shift+d exec rofi -show ssh
 bindsym $mod+Tab exec rofi -show window -lines 10
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -p "Applications:" -location 7  -sidebar-mode'
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -p "Applications:" -sidebar-mode'
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up

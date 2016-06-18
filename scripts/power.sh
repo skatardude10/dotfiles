@@ -1,5 +1,5 @@
 #!/bin/bash
-res=$(echo "logout|reboot|suspend|shutdown" | rofi -sep "|" -dmenu -i -p 'Power: ' "" -hide-scrollbar -width 10 -location 5 -sidebar-mode)
+res=$(echo "logout|reboot|suspend|shutdown" | rofi -sep "|" -dmenu -i -p 'Power: ' "" -hide-scrollbar -width 10 -sidebar-mode)
 
 if [ $res = "logout" ]; then
     i3-msg exit
