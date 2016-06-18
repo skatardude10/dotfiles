@@ -171,57 +171,17 @@ mode "$mode_gaps_outer" {
 # Auto-Start Programs
 exec sh ~/dotfiles/scripts/wallpaper-script.sh 
 exec sh ~/dotfiles/scripts/drop-term.sh 
-# exec compton --config ~/dotfiles/rc/.comptonrc 
+exec compton --config ~/dotfiles/rc/.comptonrc 
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/scripts/update.sh
 exec sh ~/dotfiles/scripts/updatelong.sh
+exec yabar -c ~/dotfiles/config/yabar.conf
 exec mpd
 exec xbindkeys
 exec mpd-notification
 for_window [instance="dropterm"] floating enable;
 for_window [instance="dropterm"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
 bindsym $mod+grave [instance="dropterm"] scratchpad show
-
-# Bars
-bar {
-	i3bar_command i3bar -t
-	status_command i3blocks -c ~/dotfiles/config/i3/.i3blocks.conf
-	strip_workspace_numbers no
-	position top
-	mode hide
-	hidden_state hide
-	modifier Mod1
-	tray_output none
-	height $barheight
-	font pango:Font Awesome, $font
-	colors {
-		background 		$background
-		statusline 		$foreground
-		separator 		$color7
-		#                  		border 		background 		text
-		focused_workspace 	$background	$background		$color4
-		active_workspace 	$background	$background		$color1
-		inactive_workspace 	$background	$background		$foreground
-		urgent_workspace 	$background	$background		$color2
-	}
-}
-
-bar {
-	i3bar_command i3bar -t
-	status_command i3blocks -c ~/dotfiles/config/i3/.i3blocksbottom.conf
-	position bottom
-	mode hide
-	hidden_state hide
-	modifier Ctrl
-	tray_output none
-	workspace_buttons no
-	height $barheight
-	font pango:Font Awesome, $font
-	colors {
-		background 		$background
-		statusline 		$foreground
-	}
-}
 
 exec dot-sync
 exec xrdb ~/.Xresources
