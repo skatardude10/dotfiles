@@ -13,7 +13,7 @@ def print_workspaces():
         else:
             output = i['name']
         outputlist.append(output)
-    print("  ".join(outputlist))
+    print("  ".join(outputlist) + " ")
 
 print_workspaces()
 
