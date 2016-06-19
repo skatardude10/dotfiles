@@ -26,12 +26,12 @@ set_from_resource $color13 color13
 set_from_resource $color14 color14
 set_from_resource $color15 color15
 
-# class                 		border  	backgr. 	text    		indicator 	child_border
-client.focused          		$color14 	$background 	$foreground	$color9   	$color14
-client.focused_inactive		$background 	$background 	$color7 	$background   	$background
-client.unfocused        		$background 	$background 	$color7		$background   	$background
-client.urgent           		$color4 	$background 	$color4 	$color13   	$color4
-client.placeholder      		$background 	$background 	$color7		$background   	$background
+# class                 		border  		backgr. 		text    		indicator 		child_border
+client.focused          		$foreground 		$background 	$foreground	 	$color5   	$color166
+client.focused_inactive			$foreground 	 	$background 	$color7 		$color1   	$color333
+client.unfocused        		$foreground 		$background 	$color7			$color1 	$color333
+client.urgent           		$foreground 		$background 	$color4 		$color14   	$color14FF
+client.placeholder      		$foreground 	 	$background 	$color7			$color1   	$color333
 client.background 				$background
 
 # Workspaces and Assignments
@@ -55,7 +55,7 @@ assign [class="Thunar"] $workspace4
 
 # Window Parameters
 for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 gaps inner 15
 gaps outer 0
 

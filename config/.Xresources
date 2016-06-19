@@ -61,16 +61,18 @@ URxvt.font:	 xft:FNT:size=SIZ
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
+URxvt.internalBorder:  20
+
 
 ! == Rofi == !
-rofi.padding: 400
+rofi.padding: 20
 rofi.width: 20
 rofi.bw: 1
 rofi.opacity: 90
-rofi.fullscreen: true
+rofi.fullscreen: false
 rofi.color-enabled: true
 rofi.separator-style: dashed
-rofi.color-window: xbackground, xbackground, xcolor2
+rofi.color-window: xbackground, xcolor3, xcolor2
 rofi.color-normal: xbackground, xforeground, xbackground, xbackground, xcolor5
 rofi.color-active: xbackground, xcolor1, xbackground xbackground, xcolor0
 rofi.color-urgent: xbackground, xcolor4, xbackground, xbackground, xcolor0
