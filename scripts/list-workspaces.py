@@ -9,7 +9,7 @@ def print_workspaces():
     outputlist=[]
     for i in workspaces:
         if i['focused']==True:
-            output = "◌" + i['name'] + "◌"
+            output = "▪" + i['name'] + "▪"
         else:
             output = i['name']
         outputlist.append(output)
