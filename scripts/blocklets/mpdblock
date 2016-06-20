@@ -1,7 +1,7 @@
 mus(){ # Current song ..
   mus=`mpc current`
   if [[ $mus ]]; then
-  	mp3=$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n' | tr -d ',)(/\-`.[]' | tr [A-Z] [a-z] )
+  	mp3=$(tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n' | cut -c 1-45 | cut -f-7 -d" " | tr -d ',)(/\`[]' | tr -d "-" | cut -f1 -d"." )
   	case $mp3 in
   		*MP3)
   			title=$(for i in $mp3; do    echo "    $mp3   "; done | rev | cut -c 4- | rev;) 
@@ -14,9 +14,4 @@ mus(){ # Current song ..
   fi
 }
 
-case $BLOCK_BUTTON in
-    3) MPD_HOST=127.0.0.1 mpc $password toggle | filter ;;  # right click, pause/unpause
-    4) MPD_HOST=127.0.0.1 mpc $password next   | mus ;;  # scroll up, next
-    5) MPD_HOST=127.0.0.1 mpc $password prev   | mus ;;  # scroll down, previous
-    *) MPD_HOST=127.0.0.1 mpc $password status | mus ;;
-esac
+MPD_HOST=127.0.0.1 mpc $password status | mus

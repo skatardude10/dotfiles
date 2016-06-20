@@ -1,11 +1,14 @@
 filter() {
     sed '3q;d' | cut -c 8-10 | tr -d ' ' |  sed 's/$/  /'
 }
-
-case $BLOCK_BUTTON in
-    3) MPD_HOST=127.0.0.1 mpc $password volume 0 | filter ;;  # right click, pause/unpause
-    4) MPD_HOST=127.0.0.1 mpc $password volume +5 | filter ;;  # scroll up, next
-    5) MPD_HOST=127.0.0.1 mpc $password volume -5 | filter ;;  # scroll down, previous
-    *) MPD_HOST=127.0.0.1 mpc $password status | filter ;;
-esac
-
+vol=$(MPD_HOST=127.0.0.1 mpc $password status | filter)
+if [ $vol -gt "75" ]
+then
+	icon=$(echo " " )
+elif [ $vol -gt "35" ] 
+then
+	icon=$(echo " " )
+else
+	icon=$(echo " ")
+fi
+echo "$icon "
