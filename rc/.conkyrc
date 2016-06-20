@@ -23,4 +23,5 @@ Home ${fs_free /home} Free
 RAM ${memperc}% Used
 CPU ${cpu}%
 Battery ${Battery}
+${exec ip -o link show | awk '{print $2,$9}' | grep UP | cut -f1 -d":" }: ${exec ip addr show $(ip -o link show | awk '{print $2,$9}' | grep UP | cut -f1 -d":") | grep 'inet' | cut -d: -f2 | awk '{ print $2}'}
 ]]
