@@ -4,11 +4,11 @@ filter() {
 vol=$(MPD_HOST=127.0.0.1 mpc $password status | filter)
 if [ $vol -gt "75" ]
 then
-	icon=$(echo " " )
+	icon=$(echo "   " )
 elif [ $vol -gt "35" ] 
 then
-	icon=$(echo " " )
+	icon=$(echo "   " )
 else
-	icon=$(echo " ")
+	icon=$(echo "   ")
 fi
-echo "$icon "
+echo " $icon "
