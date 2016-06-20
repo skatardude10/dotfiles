@@ -68,7 +68,7 @@ bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
 bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec rofi -show ssh
-bindsym $mod+Tab exec rofi -show window -lines 10
+bindsym $mod+Tab exec rofi -show window -lines 10 -location 2 -xoffset 0
 bindsym $mod+Shift+Tab exec sh ~/dotfiles/scripts/i3_switch_workspace.sh
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -location 1 -xoffset 14 -p "Applications:" -sidebar-mode'
 bindsym $mod+j focus left
