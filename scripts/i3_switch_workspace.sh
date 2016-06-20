@@ -6,7 +6,7 @@ function gen_workspaces()
 }
 
 
-WORKSPACE=$( (echo empty; gen_workspaces)  | rofi -location 1 -separator-style none -hide-scrollbar -xoffset 18 -yoffset 45 -width -10 -dmenu -p "Select:")
+WORKSPACE=$( (echo empty; gen_workspaces)  | rofi -location 1 -hide-scrollbar -xoffset 18 -auto-select -i -yoffset 45 -width -18 -dmenu -p "Select:")
 
 if [ x"empty" = x"${WORKSPACE}" ]
 then

@@ -71,6 +71,7 @@ rofi.bw: 1
 rofi.location: 3
 rofi.xoffset: -18 
 rofi.yoffset: 45
+rofi.auto-select: true
 rofi.opacity: 90
 rofi.fullscreen: false
 rofi.color-enabled: true

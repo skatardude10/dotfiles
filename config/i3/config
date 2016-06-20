@@ -35,11 +35,11 @@ client.placeholder      		$foreground 	 	$background 	$color7			$color1   	$colo
 client.background 				$background
 
 # Workspaces and Assignments
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
+set $workspace1 "1  Text"
+set $workspace2 "2  Web"
+set $workspace3 "3  Term"
+set $workspace4 "4  File"
+set $workspace5 "5  Steam"
 set $workspace6 "6 " 
 set $workspace7 "7 " 
 set $workspace8 "8 "
@@ -69,6 +69,7 @@ bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec rofi -show ssh
 bindsym $mod+Tab exec rofi -show window -lines 10
+bindsym $mod+Shift+Tab exec sh ~/dotfiles/scripts/i3_switch_workspace.sh
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -p "Applications:" -sidebar-mode'
 bindsym $mod+j focus left
 bindsym $mod+k focus down

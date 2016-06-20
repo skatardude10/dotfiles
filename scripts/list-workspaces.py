@@ -2,19 +2,23 @@
 
 import i3ipc
 from string import digits
+from string import ascii_letters
 
 i3 = i3ipc.Connection()
 
 def print_workspaces():
     workspaces = i3.get_workspaces()
     outputlist=[]
+    remove_characters = ascii_letters + digits
     for i in workspaces:
         if i['focused']==True:
-            output = "▪" + i['name'] + "▪"
-            output = output.translate({ord(k): None for k in digits})
+            output = i['name']
+            output = output.translate({ord(k): None for k in remove_characters})
+            output = "<big>" + output + "</big>"
         else:
             output = i['name']
-            output = output.translate({ord(k): None for k in digits})
+            output = output.translate({ord(k): None for k in remove_characters})
+            output = "<span foreground='#ec79b3'>" + output + "</span>"
         outputlist.append(output)
     print("  ".join(outputlist) + " ")
 
