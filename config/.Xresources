@@ -69,7 +69,7 @@ rofi.padding: 20
 rofi.width: 20
 rofi.bw: 1
 rofi.location: 3
-rofi.xoffset: -18 
+rofi.xoffset: -14
 rofi.yoffset: 45
 rofi.auto-select: true
 rofi.opacity: 90

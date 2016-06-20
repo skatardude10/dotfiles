@@ -1,6 +1,6 @@
 # rofi command. Make sure to have "$@" as last argument
 _rofi () {
-    rofi -regex -i -location 3 -separator-style none -hide-scrollbar -xoffset -18 -yoffset 45 -width -50 -lines 30 -no-levenshtein-sort "$@"
+    rofi -regex -i -location 3 -separator-style none -hide-scrollbar -width -50 -lines 30 -no-levenshtein-sort "$@"
 }
 
 # custom mpd host
