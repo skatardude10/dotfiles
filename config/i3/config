@@ -26,8 +26,8 @@ set_from_resource $color13 color13
 set_from_resource $color14 color14
 set_from_resource $color15 color15
 
-# class                 		border  		backgr. 		text    		indicator 		child_border
-client.focused          		$foreground 		$background 	$foreground	 	$color5   	$color166
+# class                 		border  			backgr. 		text    		indicator 		child_border
+client.focused          		$foreground 		$background 	$foreground	 	$color266  	$color166
 client.focused_inactive			$foreground 	 	$background 	$color7 		$color1   	$color333
 client.unfocused        		$foreground 		$background 	$color7			$color1 	$color333
 client.urgent           		$foreground 		$background 	$color4 		$color14   	$color14FF
@@ -35,16 +35,16 @@ client.placeholder      		$foreground 	 	$background 	$color7			$color1   	$colo
 client.background 				$background
 
 # Workspaces and Assignments
-set $workspace1 ""
-set $workspace2 ""
-set $workspace3 ""
-set $workspace4 ""
-set $workspace5 ""
-set $workspace6 "" 
-set $workspace7 "" 
-set $workspace8 ""
-set $workspace9 ""
-set $workspace10 ""
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 " 
+set $workspace7 "7 " 
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
 assign [class="google-chrome"] $workspace2
 assign [class="Vlc"] $workspace2
 assign [class="Firefox"] $workspace2

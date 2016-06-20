@@ -1,0 +1,16 @@
+No `block-list` entry found for the bar(bar1).
+Traceback (most recent call last):
+  File "/home/carder/dotfiles/scripts/list-workspaces.py", line 3, in <module>
+    import i3ipc
+  File "/usr/lib/python3.5/site-packages/i3ipc.py", line 9, in <module>
+    import subprocess
+  File "/usr/lib/python3.5/subprocess.py", line 366, in <module>
+    import warnings
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 954, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 896, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1136, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1110, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1246, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 365, in _verbose_message
+KeyboardInterrupt
