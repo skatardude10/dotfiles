@@ -22,5 +22,5 @@ Temp ${acpitemp} C
 Home ${fs_free /home} Free
 RAM ${memperc}% Used
 CPU ${cpu}%
-Battery ${Battery} ${apcupsd_charge}
+Battery ${Battery}
 ]]
