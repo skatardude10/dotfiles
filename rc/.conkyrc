@@ -17,11 +17,13 @@ cpu_avg_samples=2,
 }
 
 conky.text = [[
-Uptime ${uptime}
-Temp ${acpitemp} C
-Home ${fs_free /home} Free
-RAM ${memperc}% Used
-CPU ${cpu}%
-Battery ${Battery}
-${exec ip -o link show | awk '{print $2,$9}' | grep UP | cut -f1 -d":" }: ${exec ip addr show $(ip -o link show | awk '{print $2,$9}' | grep UP | cut -f1 -d":") | grep 'inet' | cut -d: -f2 | awk '{ print $2}'}
+Uptime: ${uptime}
+Temp: ${acpitemp} C
+Home: ${fs_free /home} Free
+RAM: ${memperc}% Used
+CPU: ${cpu}%
+Battery: ${Battery}
+Net: ${exec ip -o link show | awk '{print $2,$9}' | grep UP | cut -f1 -d":" }: ${exec ip addr show $(ip -o link show | awk '{print $2,$9}' | grep UP | cut -f1 -d":") | grep 'inet' | cut -d: -f2 | awk '{ print $2}'}
+Weather: ${exec cat ~/.weather}
+Updates: ${exec cat ~/.updates}
 ]]

@@ -1,6 +1,7 @@
 #!/bin/bash
 while :
 do
-	pkill -RTMIN+10 i3blocks
-	sleep 1
+	checkupdates | wc -l > ~/.updates
+	curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=0\&locCode\=80016 | perl -ne 'if (/Currently/) {chomp;/\<title\>Currently: (.*)?\<\/title\>/; print "$1"; }' | tr -d ':' |  sed 's/$/   /' > ~/.weather
+	sleep 1200
 done
