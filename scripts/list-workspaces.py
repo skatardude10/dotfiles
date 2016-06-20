@@ -14,7 +14,7 @@ def print_workspaces():
         if i['focused']==True:
             output = i['name']
             output = output.translate({ord(k): None for k in remove_characters})
-            output = "<big>" + output + "</big>"
+            #output = "<big>" + output + "</big>"
         else:
             output = i['name']
             output = output.translate({ord(k): None for k in remove_characters})
