@@ -1,12 +1,6 @@
 #!/bin/bash
-shopt -s nullglob
-cd ~/dotfiles/wallpapers
-while true; do
-	files=()
-	for i in *.jpg *.png; do
-		[[ -f $i ]] && files+=("$i")
-	done
-	range=${#files[@]}
-	((range)) && feh --bg-fill "${files[RANDOM % range]}" # "${files[RANDOM % range]}" "${files[RANDOM % range]}"
-	sleep 10m
-done
+wallpaper=~/dotfiles/wallpapers/wallpaper.png
+wpout=~/wallpaper.png
+text=$(echo $HOSTNAME)
+convert -size 1920x1080 xc:none -gravity south -stroke black -strokewidth 2 -annotate 0 $text -background none -shadow 100x3+0+0 +repage -stroke none -fill white -annotate 0 $text $wallpaper  +swap -gravity south -geometry -20+1 -composite  $wpout
+feh --bg-fill $wpout

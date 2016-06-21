@@ -175,7 +175,6 @@ exec sh ~/dotfiles/scripts/drop-term.sh
 exec compton --config ~/dotfiles/rc/.comptonrc 
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/scripts/update.sh
-exec sh ~/dotfiles/scripts/updatelong.sh
 exec yabar -c ~/dotfiles/config/yabar.conf
 exec mpd
 exec xbindkeys
