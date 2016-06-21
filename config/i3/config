@@ -175,7 +175,6 @@ exec sh ~/dotfiles/scripts/drop-term.sh
 exec compton --config ~/dotfiles/rc/.comptonrc 
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/scripts/update.sh
-exec yabar -c ~/dotfiles/config/yabar.conf
 exec mpd
 exec xbindkeys
 exec mpd-notification
@@ -186,3 +185,4 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 exec dot-sync
 exec xrdb ~/.Xresources
 exec pkill urxvt
+exec yabar -c ~/dotfiles/config/yabar.conf

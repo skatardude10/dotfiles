@@ -20,7 +20,7 @@ then
     fi
   }
 
-  MPD_HOST=127.0.0.1 mpc $password status | mus
+  echo "$(MPD_HOST=127.0.0.1 mpc $password status | mus)"
 else
   echo "$nowplaying"
 fi
