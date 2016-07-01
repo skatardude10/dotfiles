@@ -56,8 +56,8 @@ assign [class="Thunar"] $workspace4
 # Window Parameters
 for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 1
-gaps inner 5
-gaps outer 10
+gaps inner 0
+gaps outer 0
 
 # Binds
 bindsym mod1+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 100 100
