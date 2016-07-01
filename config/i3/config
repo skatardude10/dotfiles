@@ -54,7 +54,7 @@ assign [class="Subl3"] $workspace1
 assign [class="Thunar"] $workspace4
 
 # Window Parameters
-for_window [class="Gimp"] floating enable, border normal
+#for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 1
 gaps inner 0
 gaps outer 0
