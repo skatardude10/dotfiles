@@ -54,7 +54,7 @@
 
 # Pianobar Binds
 # Start, Pause, or Play Pianobar
-"sh ~/.config/pianobar/control-pianobar.sh p"
+"PULSE_LATENCY_MSEC=30 sh ~/.config/pianobar/control-pianobar.sh p"
 	m:0x40 + c:33
 	Mod4 + p
 
