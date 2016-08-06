@@ -6,10 +6,10 @@ then
 	    sed '3q;d' | cut -c 8-10 | tr -d ' ' |  sed 's/$/  /'
 	}
 	vol=$(MPD_HOST=127.0.0.1 mpc $password status | filter)
-	if [ $vol -gt "75" ]
+	if [ "$vol" -gt "75" ]
 	then
 		icon=$(echo "   " )
-	elif [ $vol -gt "35" ] 
+	elif [ "$vol" -gt "35" ] 
 	then
 		icon=$(echo "   " )
 	else
