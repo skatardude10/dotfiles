@@ -5,5 +5,6 @@ rm ~/dotfiles/scripts/tmp
 if [ "$var" = "reset yabar" ] 
 then
 	pkill yabar
+	sleep 2;
 	yabar -c ~/dotfiles/config/yabar.conf & disown
 fi
