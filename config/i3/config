@@ -52,6 +52,7 @@ assign [class="Steam"] $workspace5
 assign [class="URxvt"] $workspace3
 assign [class="Subl3"] $workspace1
 assign [class="Thunar"] $workspace4
+assign [class="virt-manager"] $workspace6
 
 # Window Parameters
 #for_window [class="Gimp"] floating enable, border normal
