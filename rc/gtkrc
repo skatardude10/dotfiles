@@ -1,24 +1,24 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:#000022
-fg_color:#bb2244
-base_color:#000022
-text_color:#bb2244
-selected_bg_color:#000022
-selected_fg_color:#ee4488
-tooltip_bg_color:#000022
-tooltip_fg_color:#bb2244
-titlebar_bg_color:#000022
-titlebar_fg_color:#bb2244
-menubar_bg_color:#000022
-menubar_fg_color:#bb2244
-toolbar_bg_color:#000022
-toolbar_fg_color:#bb2244
-menu_bg_color:#000022
-menu_fg_color:#bb2244
-panel_bg_color:#000022
-panel_fg_color:#bb2244
-link_color:#ffaa55"
+gtk-color-scheme = "bg_color:#161616
+fg_color:#fff
+base_color:#090909
+text_color:#fff
+selected_bg_color:#4f804b
+selected_fg_color:#FFFFFF
+tooltip_bg_color:#202020
+tooltip_fg_color:#fff
+titlebar_bg_color:#181818
+titlebar_fg_color:#fff
+menubar_bg_color:#181818
+menubar_fg_color:#fff
+toolbar_bg_color:#181818
+toolbar_fg_color:#fff
+menu_bg_color:#181818
+menu_fg_color:#fff
+panel_bg_color:#181818
+panel_fg_color:#fff
+link_color:#8EC3EB"
 gtk-auto-mnemonics	= 1
 
 # Default Style
