@@ -28,4 +28,4 @@ def list_workspaces(event, data, subscription):
     if 'change' in event:
         print_workspaces()
 
-# subscription = i3.Subscription(list_workspaces, 'workspace')
+#subscription = i3.Subscription(list_workspaces, 'workspace')
