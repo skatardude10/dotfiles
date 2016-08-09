@@ -8,24 +8,24 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #000022
-#define xforeground #bb2244
-#define xcolor0 #ffaa55
-#define xcolor1 #ff3388
-#define xcolor2 #771144
-#define xcolor3 #aa2288
-#define xcolor4 #ff33dd
-#define xcolor5 #bb55bb
-#define xcolor6 #331144
-#define xcolor7 #663388
-#define xcolor8 #7722dd
-#define xcolor9 #9988cc
-#define xcolor10 #111177
-#define xcolor11 #1122dd
-#define xcolor12 #3344aa
-#define xcolor13 #3388dd
-#define xcolor14 #00dddd
-#define xcolor15 #ffee66
+#define xbackground #334455
+#define xforeground #cceeff
+#define xcolor0 #eebb77 
+#define xcolor1 #0099ff 
+#define xcolor2 #667788 
+#define xcolor3 #886666 
+#define xcolor4 #aa9988 
+#define xcolor5 #99aabb 
+#define xcolor6 #002255 
+#define xcolor7 #66ccff 
+#define xcolor8 #3388cc 
+#define xcolor9 #bb9944 
+#define xcolor10 #eebb77 
+#define xcolor11 #667788 
+#define xcolor12 #004499 
+#define xcolor13 #8bc3dd 
+#define xcolor14 #eac151 
+#define xcolor15 #268ff6 
 
  *.background: xbackground
  *.foreground: xforeground
@@ -69,14 +69,14 @@ rofi.padding: 20
 rofi.width: 20
 rofi.bw: 1
 rofi.location: 3
-rofi.xoffset: -14
-rofi.yoffset: 45
+rofi.xoffset: 0
+rofi.yoffset: 24
 rofi.auto-select: true
-rofi.opacity: 90
+rofi.opacity: 100
 rofi.fullscreen: false
 rofi.color-enabled: true
 rofi.separator-style: dashed
-rofi.color-window: xbackground, xcolor3, xcolor2
+rofi.color-window: xbackground, xbackground, xbackground
 rofi.color-normal: xbackground, xforeground, xbackground, xbackground, xcolor5
 rofi.color-active: xbackground, xcolor8, xbackground, xbackground, xcolor5
 rofi.color-urgent: xbackground, xcolor0, xbackground, xbackground, xcolor15
