@@ -47,7 +47,7 @@
 
 [frame]
     width = 1
-     color = "#2f499a"
+     color = "#2d3e94"
 
 [shortcuts]
     close = ctrl+space
@@ -56,18 +56,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#2f499a"
-    foreground = "#cceeff"
+    background = "#2d3e94"
+    foreground = "#ffffff"
     timeout = 120
 
 [urgency_normal]
-    background = "#2f499a"
-    foreground = "#cceeff"
+    background = "#2d3e94"
+    foreground = "#ffffff"
     timeout = 120
 
 [urgency_critical]
-    background = "#2f499a"
-    foreground = "#cceeff"
+    background = "#2d3e94"
+    foreground = "#ffffff"
     timeout = 120
 
 [music]
