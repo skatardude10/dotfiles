@@ -18,7 +18,7 @@ def print_workspaces():
         else:
             output = i['name']
             output = output.translate({ord(k): None for k in remove_characters})
-            output = "<span foreground='#eeddcc'>" + output + "</span>"
+            output = "<span foreground='#A6DDFF'>" + output + "</span>"
         outputlist.append(output)
     print("  ".join(outputlist) + " ")
 

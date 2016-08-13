@@ -8,8 +8,8 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #334455
-#define xforeground #cceeff
+#define xbackground #2d3e94
+#define xforeground #ffffff
 #define xcolor0 #eebb77 
 #define xcolor1 #0099ff 
 #define xcolor2 #667788 
@@ -70,7 +70,7 @@ rofi.width: 20
 rofi.bw: 1
 rofi.location: 3
 rofi.xoffset: 0
-rofi.yoffset: 24
+rofi.yoffset: 30
 rofi.auto-select: true
 rofi.opacity: 100
 rofi.fullscreen: false

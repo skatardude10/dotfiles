@@ -1,7 +1,7 @@
 count=$(pgrep vpn | wc -l)
 if [ $count = "0" ]; then
-	count=$(echo "")
+	count=$(echo "")
 else
-	count=$(echo "")
+	count=$(echo "")
 fi
 echo "   $count   "
