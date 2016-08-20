@@ -1,7 +1,7 @@
 ! == Define Font == !
 #define FNT Hack
 #define STYL
-#define SIZ 10
+#define SIZ 12
 
 ! == Set Params == !
 *.font: FNT STYL SIZ
