@@ -1,5 +1,5 @@
 [global]
-    font = Hack 10
+    font = Hack 12
      
     # Allow a small subset of html markup:
     #   <b>bold</b>
