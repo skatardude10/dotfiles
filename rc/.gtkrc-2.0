@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/carder/.gtkrc-2.0.mine"
-gtk-theme-name="Windows10"
-gtk-icon-theme-name="Paper"
+gtk-theme-name="FlatColor"
+gtk-icon-theme-name="flattrcolor"
 gtk-font-name="Droid Sans 10"
 gtk-cursor-theme-name="Human"
 gtk-cursor-theme-size=0

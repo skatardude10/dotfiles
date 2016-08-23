@@ -1,15 +1,15 @@
 ! == Define Font == !
 #define FNT Hack
 #define STYL
-#define SIZ 10
+#define SIZ 8
 
 ! == Set Params == !
 *.font: FNT STYL SIZ
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #2d3e94
-#define xforeground #ffffff
+#define xbackground #000000
+#define xforeground #eebb77
 #define xcolor0 #eebb77 
 #define xcolor1 #0099ff 
 #define xcolor2 #667788 
@@ -61,16 +61,17 @@ URxvt.font:	 xft:FNT:size=SIZ
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
-URxvt.internalBorder:  20
+URxvt.internalBorder:  2
 
 
 ! == Rofi == !
-rofi.padding: 20
+rofi.padding: 2
 rofi.width: 20
 rofi.bw: 1
 rofi.location: 3
 rofi.xoffset: 0
-rofi.yoffset: 30
+rofi.yoffset: 16
+rofi.font: FNT STYL SIZ
 rofi.auto-select: true
 rofi.opacity: 100
 rofi.fullscreen: false
