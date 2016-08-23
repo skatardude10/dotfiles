@@ -19,7 +19,7 @@ notify-send "Starting System Backup from $SRC to $SNAP"
 
 # sync
 
-rsync $OPTS --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/Storage-Backup/*","/media/*","/lost+found"} $SRC $SNAP/latest >> $SNAP/rsync.log
+rsync $OPTS --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/Storage-Backup/*","/mnt/Data/win10.raw","/mnt/Extra/win10-extra-disk.img","/media/*","/lost+found"} $SRC $SNAP/latest >> $SNAP/rsync.log
 
 notify-send "Backup Sync Complete!"
 
