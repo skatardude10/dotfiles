@@ -30,3 +30,6 @@ case $HOSTNAME in
   (*Desktop)   . /home/carder/torch/install/bin/torch-activate;;
   (*laptop)   alias tv='sh ~/Documents/setup-tv-bluetooth.sh';;
 esac
+
+
+. /home/carder/torch/install/bin/torch-activate
