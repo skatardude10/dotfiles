@@ -7,6 +7,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # == Alias == #
+alias feh='feh -Z.'
 alias ls='ls -a --color=auto'
 alias update='yaourt -Syu'
 alias installed='expac -H M "%011m\t%-20n\t%10d" $( comm -23 <(yaourt -Qqen|sort) <(yaourt -Qqg base base-devel|sort) ) | sort -n'
