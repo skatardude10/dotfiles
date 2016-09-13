@@ -57,17 +57,17 @@
 
 [urgency_low]
     background = "#000000"
-    foreground = "#eebb77"
+    foreground = "#0effff"
     timeout = 120
 
 [urgency_normal]
     background = "#000000"
-    foreground = "#eebb77"
+    foreground = "#0effff"
     timeout = 120
 
 [urgency_critical]
     background = "#000000"
-    foreground = "#eebb77"
+    foreground = "#0effff"
     timeout = 120
 
 [music]
