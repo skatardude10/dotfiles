@@ -67,6 +67,6 @@
 	"material_theme_tree_headings": true,
 	"mouse_wheel_tabswitch": true,
 	"overlay_scroll_bars": "enabled",
-	"theme": "SetiD.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"word_wrap": true
 }
