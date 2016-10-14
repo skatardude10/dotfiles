@@ -40,7 +40,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Colorsublime - Themes/8-Colour-Dark.tmTheme",
+	"color_scheme": "Packages/Materialize/schemes/Material Seti.tmTheme",
 	"fade_fold_buttons": false,
 	"font_face": "Hack",
 	"font_options":
@@ -67,6 +67,6 @@
 	"material_theme_tree_headings": true,
 	"mouse_wheel_tabswitch": true,
 	"overlay_scroll_bars": "enabled",
-	"theme": "Default.sublime-theme",
+	"theme": "Seti_orig.sublime-theme",
 	"word_wrap": true
 }
