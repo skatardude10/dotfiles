@@ -18,14 +18,14 @@
     
     sort = yes
     indicate_hidden = yes
-    alignment = left
+    alignment = center
     bounce_freq = 0
     show_age_threshold = 120
     word_wrap = yes
     ignore_newline = no
 
     #   [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "800x20-0-0"
+    geometry = "800x20-25-50"
     shrink = yes
     transparency = 20
     idle_threshold = 30
@@ -36,7 +36,7 @@
     show_indicators = no
     line_height = 5
     separator_height = 0
-    padding = 5
+    padding = 10
     horizontal_padding = 5
     separator_color = auto
     startup_notification = false
@@ -46,8 +46,8 @@
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 1
-     color = "#111133"
+     width = 1
+     color = "#6629a0"
 
 [shortcuts]
     close = ctrl+space
