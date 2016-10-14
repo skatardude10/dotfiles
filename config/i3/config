@@ -57,7 +57,7 @@ assign [class="virt-manager"] $workspace6
 # Window Parameters
 #for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 1
-gaps inner 0
+gaps inner 10
 gaps outer 0
 
 # Binds
@@ -126,14 +126,14 @@ bindsym $mod+Ctrl+j move workspace to output left
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+r mode "resize"
 mode "resize" {
-		bindsym j resize shrink width 10 px or 10 ppt
+		bindsym semicolon resize shrink width 10 px or 10 ppt
 		bindsym k resize grow height 10 px or 10 ppt
 		bindsym l resize shrink height 10 px or 10 ppt
-		bindsym semicolon resize grow width 10 px or 10 ppt
-		bindsym Left resize shrink width 10 px or 10 ppt
-		bindsym Down resize grow height 10 px or 10 ppt
-		bindsym Up resize shrink height 10 px or 10 ppt
-		bindsym Right resize grow width 10 px or 10 ppt
+		bindsym j resize grow width 10 px or 10 ppt
+		bindsym Right resize shrink width 10 px or 10 ppt
+		bindsym Up resize grow height 10 px or 10 ppt
+		bindsym Down resize shrink height 10 px or 10 ppt
+		bindsym Left resize grow width 10 px or 10 ppt
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }

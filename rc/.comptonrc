@@ -1,11 +1,31 @@
 # Shadow
-shadow = false;
+shadow = true;
+no-dnd-shadow = true;
+no-dock-shadow = true;
+clear-shadow = true;
+shadow-radius = 3;
+shadow-offset-x = 3;
+shadow-offset-y = 3;
+shadow-opacity = 0.50;
+shadow-red = 0.0;
+shadow-green = 0.0;
+shadow-blue = 0.0;
+shadow-exclude = [
+    "name = 'Notification'",
+    "class_g = 'Conky'",
+    "class_g ?= 'Notify-osd'",
+    "class_g = 'Cairo-clock'",
+    "_GTK_FRAME_EXTENTS@:c"
+];
+# shadow-exclude = "n:e:Notification";
+# shadow-exclude-reg = "x10+0+0";
+# xinerama-shadow-crop = true;
 
 # Opacity
-menu-opacity = 0.9;
-inactive-opacity = 0.9;
-active-opacity = 0.9;
-frame-opacity = 0.9;
+menu-opacity = 0.98;
+inactive-opacity = 0.88;
+active-opacity = 0.96;
+frame-opacity = 0.7;
 inactive-opacity-override = false;
 alpha-step = 0.06;
 inactive-dim = 0.0;
