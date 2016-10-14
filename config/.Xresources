@@ -65,15 +65,15 @@ URxvt.internalBorder:  2
 
 
 ! == Rofi == !
-rofi.padding: 2
-rofi.width: 20
-rofi.bw: 1
-rofi.location: 3
-rofi.xoffset: 0
-rofi.yoffset: 16
+rofi.padding: 10
+rofi.width: 25
+rofi.bw: 10
+rofi.location: 6
+!rofi.xoffset: 0
+rofi.yoffset: -50
 rofi.font: FNT STYL SIZ
 rofi.auto-select: true
-rofi.opacity: 100
+rofi.opacity: 90
 rofi.fullscreen: false
 rofi.color-enabled: true
 rofi.separator-style: dashed

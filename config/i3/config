@@ -71,7 +71,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec rofi -show ssh
 bindsym $mod+Tab exec rofi -show window -lines 10 -location 2 -xoffset 0
 bindsym $mod+Shift+Tab exec sh ~/dotfiles/scripts/i3_switch_workspace.sh
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -location 1 -p "Applications:" -sidebar-mode'
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -p "Applications:" -sidebar-mode'
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
