@@ -2,15 +2,15 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/carder/.gtkrc-2.0.mine"
-gtk-theme-name="Adapta-Nokto-Eta"
+gtk-theme-name="oomox-numix"
 gtk-icon-theme-name="flattrcolor"
-gtk-font-name="Ubuntu 10"
-gtk-cursor-theme-name="Simple-and-Soft"
+gtk-font-name="Dina 8"
+gtk-cursor-theme-name="mac-rainbow-cursor"
 gtk-cursor-theme-size=0
-gtk-toolbar-style=GTK_TOOLBAR_BOTH
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
+gtk-toolbar-style=GTK_TOOLBAR_TEXT
+gtk-toolbar-icon-size=GTK_ICON_SIZE_MENU
+gtk-button-images=0
+gtk-menu-images=0
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1

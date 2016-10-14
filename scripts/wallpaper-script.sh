@@ -1,3 +1,3 @@
 #!/bin/bash
 wallpaper=~/dotfiles/wallpapers/wallpaper.png
-feh --bg-fill $wallpaper
+feh --bg-tile $wallpaper
