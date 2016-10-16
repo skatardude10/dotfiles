@@ -10,7 +10,7 @@ font pango: $font
 set_from_resource $background background
 set_from_resource $foreground foreground
 set_from_resource $color0 color0
-set_from_resource $color1 color1
+set_from_resource $color1st color1
 set_from_resource $color2 color2
 set_from_resource $color3 color3
 set_from_resource $color4 color4
@@ -27,11 +27,11 @@ set_from_resource $color14 color14
 set_from_resource $color15 color15
 
 # class                 		border  			backgr. 		text    		indicator 		child_border
-client.focused          		$foreground 		$background 	$foreground	 	$color266  	$color1aa
-client.focused_inactive			$foreground 	 	$background 	$color7 		$color1   	$color333
-client.unfocused        		$foreground 		$background 	$color7			$color1 	$color333
+client.focused          		$foreground 		$background 	$foreground	 	$color266  	$color1staa
+client.focused_inactive			$foreground 	 	$background 	$color7 		$color1st   	$color333
+client.unfocused        		$foreground 		$background 	$color7			$color1st 	$color333
 client.urgent           		$foreground 		$background 	$color4 		$color14   	$color14FF
-client.placeholder      		$foreground 	 	$background 	$color7			$color1   	$color333
+client.placeholder      		$foreground 	 	$background 	$color7			$color1st   	$color333
 client.background 				$background
 
 # Workspaces and Assignments
