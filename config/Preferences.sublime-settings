@@ -52,6 +52,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Material Theme",
+		"Material Theme - Appbar",
+		"Seti_UI",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -67,6 +70,6 @@
 	"material_theme_tree_headings": true,
 	"mouse_wheel_tabswitch": true,
 	"overlay_scroll_bars": "enabled",
-	"theme": "Seti_orig.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"word_wrap": true
 }
