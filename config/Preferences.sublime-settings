@@ -52,9 +52,6 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Material Theme",
-		"Material Theme - Appbar",
-		"Seti_UI",
 		"Vintage"
 	],
 	"indent_guide_options":
