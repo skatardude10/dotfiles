@@ -13,6 +13,8 @@ alias update='yaourt -Syu'
 alias installed='expac -H M "%011m\t%-20n\t%10d" $( comm -23 <(yaourt -Qqen|sort) <(yaourt -Qqg base base-devel|sort) ) | sort -n'
 alias steamfix='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete'
 alias transfer='rsync -avz --progress -e 'ssh''
+alias ncmpcpp='MPD_HOST=127.0.0.1 ncmpcpp'
+alias mpc='MPD_HOST=127.0.0.1 mpc'
 
 # == Functions == #
 function actualsize { find "$1" -type f -links 1 -printf "%m\n" | awk '{m=m+$1} END {print m}'; }

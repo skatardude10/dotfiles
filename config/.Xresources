@@ -63,7 +63,7 @@ URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 URxvt.internalBorder: 10
 URxvt.depth: 32
-URxvt.background: rgba:1111/1111/3333/8888
+URxvt.background: rgba:1111/1111/3333/CCCC
 
 ! == Rofi == !
 rofi.padding: 10
