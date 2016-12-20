@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/carder/.gtkrc-2.0.mine"
-gtk-theme-name="oomox-numix"
+gtk-theme-name="Adapta"
 gtk-icon-theme-name="flattrcolor"
 gtk-font-name="Dina 8"
 gtk-cursor-theme-name="mac-rainbow-cursor"
