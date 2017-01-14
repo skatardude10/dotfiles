@@ -1,5 +1,5 @@
 [global]
-    font = Dina 8
+    font = Dina 18
      
     # Allow a small subset of html markup:
     #   <b>bold</b>

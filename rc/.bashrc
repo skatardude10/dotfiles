@@ -34,5 +34,12 @@ case $HOSTNAME in
   (*laptop)   alias tv='sh ~/Documents/setup-tv-bluetooth.sh';;
 esac
 
-
-. /home/carder/torch/install/bin/torch-activate
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_CONNECTION" ]; then
+    export DISPLAY=Desktop-VM:0.0
+    xrdb -merge ~/.Xresources
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" != "urxvt" ]; then
+	urxvt & disown
+        sleep 1
+        exit
+    fi
+fi
