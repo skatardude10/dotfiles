@@ -187,4 +187,4 @@ bindsym $mod+grave [instance="dropterm"] scratchpad show
 exec dot-sync
 exec xrdb ~/.Xresources
 exec pkill urxvt
-exec polybar bar
+exec yabar -c ~/dotfiles/config/yabar.conf
