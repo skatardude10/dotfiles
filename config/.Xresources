@@ -1,7 +1,7 @@
 ! == Define Font == !
 #define FNT Dina
 #define STYL
-#define SIZ 18
+#define SIZ 10
 
 ! == Set Params == !
 *.font: FNT STYL SIZ
