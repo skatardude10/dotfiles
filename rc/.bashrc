@@ -26,7 +26,7 @@ color3="\[$(tput setaf 2)\]"
 color4="\[$(tput setaf 3)\]"
 color5="\[$(tput setaf 4)\]"
 RESET="\[$(tput sgr0)\]"
-PS1="${color1}[\$(date +%k%M%S)] ${color2}[\u@\h] ${color3}[\$(ls -l | grep ^- | wc -l) files] ${color5}[\w] ${color4}\n● ${RESET}"
+PS1="${color1}[\$(date +%k%M%S)] ${color2}[\u@\h] ${color3}[\$(ls -l | grep ^- | wc -l) files] ${color5}[\w] ${color4}\n> ${RESET}"
 
 # == Machine Specific == #
 case $HOSTNAME in
