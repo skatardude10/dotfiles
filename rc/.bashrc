@@ -35,9 +35,18 @@ case $HOSTNAME in
 esac
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_CONNECTION" ]; then
-	xrdb -merge ~/.Xresources
 	if [[ $SSH_CLIENT == *"1.110"* ]]; then
 		export DISPLAY=Desktop-VM:0.0
+		xrdb -merge ~/.Xresources
+	    if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" != "urxvt" ]; then
+			urxvt & disown
+        	sleep 1
+        	exit
+		fi
+    fi
+	if [[ $SSH_CLIENT == *"1.82"* ]]; then
+		export DISPLAY=LAPTOPPC:0.0
+		xrdb -merge ~/.Xresources
 	    if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" != "urxvt" ]; then
 			urxvt & disown
         	sleep 1
