@@ -176,7 +176,7 @@ exec sh ~/dotfiles/scripts/wallpaper-script.sh
 exec sh ~/dotfiles/scripts/drop-term.sh  
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/scripts/update.sh
-exec compton --config ~/dotfiles/rc/.comptonrc
+# exec compton --config ~/dotfiles/rc/.comptonrc
 exec mpd
 exec xbindkeys
 exec mpd-notification
