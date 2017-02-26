@@ -1,7 +1,7 @@
 ! == Define Font == !
-#define FNT Dina
+#define FNT Ubuntu Mono
 #define STYL
-#define SIZ 10
+#define SIZ 46
 
 ! == Set Params == !
 *.font: FNT STYL SIZ
