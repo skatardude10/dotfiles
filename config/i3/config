@@ -56,7 +56,7 @@ assign [class="virt-manager"] $workspace6
 
 # Window Parameters
 #for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 gaps inner 10
 gaps outer 200
 
