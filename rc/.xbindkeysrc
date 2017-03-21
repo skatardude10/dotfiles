@@ -48,10 +48,6 @@
 	m:0x4 + c:116
 	Control + Down
 
-# Launch Rofi via Menu Button
-"rofi -show run -lines 3 -eh 1 -width 20 -m 0 -padding 20 -opacity "100" -bw 10 -hide-scrollbar -separator-style "none" -bc "#221144" -bg "#221144" -fg "#aa3355" -hlbg "#ee5555" -hlfg "#221144" -font "System San Francisco Display 10""
-	Menu
-
 # Pianobar Binds
 # Start, Pause, or Play Pianobar
 "PULSE_LATENCY_MSEC=30 sh ~/.config/pianobar/control-pianobar.sh p"

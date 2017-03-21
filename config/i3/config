@@ -1,5 +1,6 @@
 # Init
 set $mod Mod1
+set $sup Mod4
 floating_modifier $mod
 focus_on_window_activation urgent
 set_from_resource $font font
@@ -174,6 +175,7 @@ mode "$mode_gaps_outer" {
 # Auto-Start Programs
 exec sh ~/dotfiles/scripts/wallpaper-script.sh 
 exec sh ~/dotfiles/scripts/drop-term.sh  
+exec sh ~/dotfiles/scripts/drop-term2.sh  
 exec sh ~/.local-exec.sh
 exec sh ~/dotfiles/scripts/update.sh
 # exec compton --config ~/dotfiles/rc/.comptonrc
@@ -183,6 +185,9 @@ exec mpd-notification
 for_window [instance="dropterm"] floating enable;
 for_window [instance="dropterm"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
 bindsym $mod+grave [instance="dropterm"] scratchpad show
+for_window [instance="dropterm2"] floating enable;
+for_window [instance="dropterm2"] move scratchpad; [instance="metask2"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
+bindsym $sup+grave [instance="dropterm2"] scratchpad show
 
 exec dot-sync
 exec xrdb ~/.Xresources
