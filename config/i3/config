@@ -182,10 +182,11 @@ exec mpd
 exec xbindkeys
 exec mpd-notification
 for_window [instance="dropterm"] floating enable;
-for_window [instance="dropterm"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
+for_window [instance="dropterm"] move scratchpad; [instance="dropterm"] scratchpad show; move absolute position center; resize shrink height 0px; resize grow width 0px; move scratchpad
 for_window [instance="dropterm2"] floating enable;
-for_window [instance="dropterm2"] move scratchpad; [instance="metask2"] scratchpad show; move position 0px 0px; resize shrink height 0px; resize grow width 0px; move scratchpad
+for_window [instance="dropterm2"] move scratchpad; [instance="dropterm2"] scratchpad show; move absolute position center; resize shrink height 0px; resize grow width 0px; move scratchpad
 bindsym $mod+grave [instance="dropterm"] scratchpad show
+bindsym $sup+grave [instance="dropterm2"] scratchpad show
 
 exec dot-sync
 exec xrdb ~/.Xresources
