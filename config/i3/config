@@ -57,7 +57,7 @@ assign [class="virt-manager"] $workspace6
 
 # Window Parameters
 #for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 200
 
@@ -67,7 +67,7 @@ bindsym $mod+Shift+y fullscreen disable
 bindsym --whole-window button2 floating toggle; sticky disable
 bindsym $mod+Return exec i3-sensible-terminal; workspace $workspace3
 bindsym $mod+Shift+Return exec subl3; workspace $workspace1
-bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
+bindsym $mod+Ctrl+Return exec thunar; w2orkspace $workspace4
 bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+d exec rofi -show ssh
