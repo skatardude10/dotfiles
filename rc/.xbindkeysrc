@@ -38,6 +38,16 @@
 	m:0x4 + c:113
 	Control + Left
 
+# Like Gmusic Song
+"sh $HOME/dotfiles/scripts/like-gmusic-song.sh"
+    m:0xc + c:111
+    Control+Alt + Up
+
+# Dislike Gmusic Song
+"sh $HOME/dotfiles/scripts/dislike-gmusic-song.sh"
+    m:0xc + c:116
+    Control+Alt + Down
+
 # MPC Volume Up
 "MPD_HOST=127.0.0.1 mpc volume +5; pkill -RTMIN+10 i3blocks"
 	m:0x4 + c:111
