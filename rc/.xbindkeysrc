@@ -1,95 +1,92 @@
+#   __            ___       __   __        __   ___  __                  
+#  /__` |__/  /\   |   /\  |__) |  \ |  | |  \ |__  /__`                 
+#  .__/ |  \ /~~\  |  /~~\ |  \ |__/ \__/ |__/ |___ .__/                 
+#                                                                        
+#       __          __        ___      __      __   __        ___    __  
+#  \_/ |__) | |\ | |  \ |__/ |__  \ / /__`    /  ` /  \ |\ | |__  | / _` 
+#  / \ |__) | | \| |__/ |  \ |___  |  .__/    \__, \__/ | \| |    | \__> 
+#                                                                        
+                                                                                                                                          
+#              ╔═╗┬ ┬┌┬┐┬┌─┐            
+#  ────────────╠═╣│ │ ││││ │────────────
+#              ╩ ╩└─┘─┴┘┴└─┘            
 # Increase Volume
 "ponymix -d 1 increase 2; ponymix -d 0 increase 2; pkill -RTMIN+10 i3blocks"
     XF86AudioRaiseVolume
-
 # Decrease Volume
 "ponymix -d 1 decrease 2; ponymix -d 0 decrease 2; pkill -RTMIN+10 i3blocks"
     XF86AudioLowerVolume
-
-# Increase Volume
-"ponymix -d 1 increase 5; ponymix -d 0 increase 5; pkill -RTMIN+10 i3blocks"
-    m:0x44 + c:111
-    Control+Mod4 + Up
-
-# Decrease Volume
-"ponymix -d 1 decrease 5; ponymix -d 0 decrease 5; pkill -RTMIN+10 i3blocks"
-    m:0x44 + c:116
-    Control+Mod4 + Down
-
 # Mute Audio
 "ponymix -d 1 toggle; ponymix -d 0 toggle; pkill -RTMIN+10 i3blocks"
 	XF86AudioMute
 
+#              ╔═╗┌─┐┌┐┌┌─┐┬─┐┌─┐┬              
+#  ────────────║ ╦├┤ │││├┤ ├┬┘├─┤│  ────────────
+#              ╚═╝└─┘┘└┘└─┘┴└─┴ ┴┴─┘            
 # Take Screenshot
 "scrot"
 	Print
 
+
+#              ╔╦╗╔═╗╔═╗            
+#  ────────────║║║╠═╝║  ────────────
+#              ╩ ╩╩  ╚═╝            
 # Pause Music
 "MPD_HOST=127.0.0.1 mpc toggle; pkill -RTMIN+10 i3blocks"
 	Pause
-
 # Next Song
 "MPD_HOST=127.0.0.1 mpc next; pkill -RTMIN+10 i3blocks"
 	m:0x4 + c:114
 	Control + Right
-
 # Previous Song
 "MPD_HOST=127.0.0.1 mpc prev; pkill -RTMIN+10 i3blocks"
 	m:0x4 + c:113
 	Control + Left
-
 # Like Gmusic Song
 "sh $HOME/dotfiles/scripts/like-gmusic-song.sh"
-    m:0xc + c:111
-    Control+Alt + Up
-
-# Dislike Gmusic Song
-"sh $HOME/dotfiles/scripts/dislike-gmusic-song.sh"
-    m:0xc + c:116
-    Control+Alt + Down
-
-# MPC Volume Up
-"MPD_HOST=127.0.0.1 mpc volume +5; pkill -RTMIN+10 i3blocks"
 	m:0x4 + c:111
 	Control + Up
-
-# MPC Volume Down
-"MPD_HOST=127.0.0.1 mpc volume -5; pkill -RTMIN+10 i3blocks"
+# Dislike Gmusic Song
+"sh $HOME/dotfiles/scripts/dislike-gmusic-song.sh"
 	m:0x4 + c:116
 	Control + Down
 
+
+#              ╔═╗┬┌─┐┌┐┌┌─┐┌┐ ┌─┐┬─┐            
+#  ────────────╠═╝│├─┤││││ │├┴┐├─┤├┬┘────────────
+#              ╩  ┴┴ ┴┘└┘└─┘└─┘┴ ┴┴└─            
 # Pianobar Binds
 # Start, Pause, or Play Pianobar
-"PULSE_LATENCY_MSEC=30 sh ~/.config/pianobar/control-pianobar.sh p"
-	m:0x40 + c:33
-	Mod4 + p
-
+# "PULSE_LATENCY_MSEC=30 sh $HOME/.config/pianobar/control-pianobar.sh p"
+# 	m:0x40 + c:33
+# 	Mod4 + p
+#
 # Quit Pianobar
-"sh ~/.config/pianobar/control-pianobar.sh quit"
-	m:0x40 + c:24
-	Mod4 + q
-
+# "sh $HOME/.config/pianobar/control-pianobar.sh quit"
+# 	m:0x40 + c:24
+# 	Mod4 + q
+#
 # Pianobar Next Song
-"sh ~/.config/pianobar/control-pianobar.sh next"
-	m:0x40 + c:114
-	Mod4 + Right
-
+# "sh $HOME/.config/pianobar/control-pianobar.sh next"
+# 	m:0x40 + c:114
+# 	Mod4 + Right
+#
 # Pianobar Previous Song
-"sh ~/.config/pianobar/control-pianobar.sh history"
-	m:0x40 + c:113
-	Mod4 + Left
-
+# "sh $HOME/.config/pianobar/control-pianobar.sh history"
+# 	m:0x40 + c:113
+# 	Mod4 + Left
+#
 # Pianobar Love
-"sh ~/.config/pianobar/control-pianobar.sh love"
-	m:0x40 + c:111
-	Mod4 + Up
-
+# "sh $HOME/.config/pianobar/control-pianobar.sh love"
+# 	m:0x40 + c:111
+# 	Mod4 + Up
+#
 # Pianobar Hate
-"sh ~/.config/pianobar/control-pianobar.sh hate"
-	m:0x41 + c:116
-	Shift+Mod4 + Down
-
+# "sh $HOME/.config/pianobar/control-pianobar.sh hate"
+# 	m:0x41 + c:116
+# 	Shift+Mod4 + Down
+#
 # Pianobar Download
-"sh ~/.config/pianobar/control-pianobar.sh download"
-	m:0x40 + c:116
-	Mod4 + Down
+# "sh $HOME/.config/pianobar/control-pianobar.sh download"
+# 	m:0x40 + c:116
+# 	Mod4 + Down
