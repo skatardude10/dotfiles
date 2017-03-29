@@ -19,8 +19,12 @@
 #  be created at $HOME/dotfiles/songs/like formatted correctly to enable
 #  creating playlists by "[l] Likes".
 #
-#  TODO:  Pull comprehensive liked songs list from Google Music and add 
-#  to likefile
+#  TODO:  
+#    1) Integrate get_collection by rating, automatically format a
+#    comprehensive likefile instead of starting from scratch
+#       *  Add these files to current local likefile, or have a 
+#          separate option to create playlist from comprehensive likes 
+#          or from the local likefile to keep the two separate.
 #
 
 gmusic=$(pgrep GMusicProxy)
