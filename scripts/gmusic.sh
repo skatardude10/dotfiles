@@ -8,6 +8,14 @@
 #  ╔═╗┬  ┌─┐┬ ┬┬  ┬┌─┐┌┬┐  ╔╦╗┌─┐┬┌─┌─┐┬─┐
 #  ╠═╝│  ├─┤└┬┘│  │└─┐ │   ║║║├─┤├┴┐├┤ ├┬┘
 #  ╩  ┴─┘┴ ┴ ┴ ┴─┘┴└─┘ ┴   ╩ ╩┴ ┴┴ ┴└─┘┴└─
+#
+#  Use in conjunction with like-gmusic-song.sh and dislike-gmusic-song.sh
+#
+#  After using like-gmusic-song.sh to like some songs, a like file will
+#  be created at $HOME/dotfiles/songs/like formatted correctly to enable
+#  creating playlists by "[l] Likes".
+#
+
 gmusic=$(pgrep GMusicProxy)
 if [ $gmusic ]
 then
