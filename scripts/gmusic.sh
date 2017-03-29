@@ -9,11 +9,18 @@
 #  ╠═╝│  ├─┤└┬┘│  │└─┐ │   ║║║├─┤├┴┐├┤ ├┬┘
 #  ╩  ┴─┘┴ ┴ ┴ ┴─┘┴└─┘ ┴   ╩ ╩┴ ┴┴ ┴└─┘┴└─
 #
+#  Have GMusicProxy enabled... this creates MPD playlists in:
+#  $HOME/.config/mpd/playlists/ or adds songs to Now Playing.
+#
+#  To make playlists based on liked songs:
 #  Use in conjunction with like-gmusic-song.sh and dislike-gmusic-song.sh
 #
 #  After using like-gmusic-song.sh to like some songs, a like file will
 #  be created at $HOME/dotfiles/songs/like formatted correctly to enable
 #  creating playlists by "[l] Likes".
+#
+#  TODO:  Pull comprehensive liked songs list from Google Music and add 
+#  to likefile
 #
 
 gmusic=$(pgrep GMusicProxy)
