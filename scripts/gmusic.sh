@@ -202,11 +202,6 @@ then
 			LikeFile=$HOME/dotfiles/songs/like
 			TmpLike=$HOME/dotfiles/songs/tmplike
 			Date=`date +%y-%m-%d-%H-%M-%S`
-			echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
-			echo "║║║│ │├┬┘├┴┐│││││ ┬   "
-			echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
-			echo "Creating Like-Playlist-$Date.m3u "
-			sleep 2
 			clear
 				case $AddorDel in
 					n)
@@ -334,11 +329,6 @@ then
 					LikeFile=$HOME/dotfiles/songs/cloudlike
 					TmpLike=$HOME/dotfiles/songs/tmplike
 					Date=`date +%y-%m-%d-%H-%M-%S`
-					echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
-					echo "║║║│ │├┬┘├┴┐│││││ ┬   "
-					echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
-					echo "Creating Like-Cloud-List-$Date.m3u "
-					sleep 2
 					clear
 						case $AddorDel in
 							n)
