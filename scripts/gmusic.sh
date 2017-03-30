@@ -57,7 +57,8 @@ then
 	echo "[a] Artist"
 	echo "[b] Album"
 	echo "[s] Song"
-	echo "[l] Likes"
+	echo "[l] Local Likes"
+	echo "[c] Cloud Likes"
 	echo ""
 	read Search
 	clear
@@ -271,7 +272,229 @@ then
 						;;
 				esac
 			;;
-	esac
+		c)
+			echo "╔╦╗┌─┐┬─┐┌─┐┌─┐┌─┐"
+			echo "║║║├┤ ├┬┘│ ┬├┤  ┌┘"
+			echo "╩ ╩└─┘┴└─└─┘└─┘ o "
+			echo "Would you like to create a like file from the Cloud?"
+			echo "[y] Yes  -or-  [n] No"
+			read Merge
+			clear
+			LikeFile=$HOME/dotfiles/songs/like
+			TmpList=$HOME/dotfiles/songs/tmplist
+			TmpLike=$HOME/dotfiles/songs/tmplike
+			case $Merge in
+				y)
+					echo "╔═╗┌┬┐┌┬┐┌┐┌┬┬┬"
+					echo "╠═╣ │  │ ││││││"
+					echo "╩ ╩ ┴  ┴ ┘└┘ooo"
+					echo "IMPORTANT: Before Continuing..."
+					echo "You MUST create a playlist called Likes"
+					echo "on Google Music, case sensitive"
+					echo "with your liked/thumbs up songs."
+					echo " "
+					echo "Press Enter when complete to continue:" 
+					read
+					clear
+					echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+					echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+					echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+					curl -s $(echo "http://localhost:9999/get_all_playlists?format=m3u") > $TmpList
+					grep -A 1 '#EXTINF:-1,Likes' $TmpList > $TmpLike
+					rm $TmpList
+					sed -i '1d' $TmpLike
+					sed -i -e 's#.*=\(\)#\1#' $TmpLike
+					CloudID=$(cat $TmpLike)
+					curl -s $(echo "http://localhost:9999/get_playlist?id=$CloudID") > $TmpList
+					sed -i '1d' $TmpList
+					sed -i -e 's#.*,\(\)#\1#' $TmpList
+					sed -i -e 's#.*=\(\)#\1#' $TmpList
+					sed -i '0~2 a\\' $TmpList
+					cp $TmpList $HOME/dotfiles/songs/cloudlike
+					sed -i '/^\s*$/d' $TmpList
+					sed -n -i '1~2!p' $TmpList
+					CloudLikeCount=$(cat $TmpList | wc -l)
+					tail -n +2 "$LikeFile" | sed '/^\s*$/d' | sed 'n; d' > "$TmpLike"  # Remove first line from likefile, remove spaces, keep odd lines leaving only all song IDs
+					NumInLike=$(cat $TmpLike | wc -l)
+					rm $TmpLike $TmpList
+					clear
+					echo "╔╦╗┌─┐┌┐┌┌─┐┬"
+					echo " ║║│ ││││├┤ │"
+					echo "═╩╝└─┘┘└┘└─┘o"
+					echo "Created like file from the cloud containing $CloudLikeCount songs compared to $NumInLike songs in local like file."
+					echo "Press Enter to continue to making playlist..."
+					read
+					clear
+					echo "╔╗╔┬ ┬┌┬┐┌┐ ┌─┐┬─┐"
+					echo "║║║│ ││││├┴┐├┤ ├┬┘"
+					echo "╝╚╝└─┘┴ ┴└─┘└─┘┴└─"
+					echo "How many songs to pull per liked songs from cloud list?"
+					read Number
+					clear
+					LikeFile=$HOME/dotfiles/songs/cloudlike
+					TmpLike=$HOME/dotfiles/songs/tmplike
+					Date=`date +%y-%m-%d-%H-%M-%S`
+					echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+					echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+					echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+					echo "Creating Like-Cloud-List-$Date.m3u "
+					sleep 2
+					clear
+						case $AddorDel in
+							n)
+								tail -n +2 "$LikeFile" | sed '/^\s*$/d' | sed 'n; d' > "$TmpLike"  # Remove first line from likefile, remove spaces, keep odd lines leaving only all song IDs
+								NumInLike=$(cat $TmpLike | wc -l)
+								Countfile=$HOME/dotfiles/songs/countfile
+								echo 0 > $Countfile
+								echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+								echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+								echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+								echo "$(cat $Countfile) of $NumInLike complete..."
+								while read songs; do
+									curl -s $(echo "http://localhost:9999/get_new_station_by_id?id=$songs&type=song&num_tracks=$Number") >> $(echo "$HOME/.config/mpd/playlists/Like-Cloud-List-$Date.m3u" | tr ' ' '-')
+									Count=$[$(cat $Countfile) + 1]
+									echo $Count > $Countfile
+									clear
+									echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+									echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+									echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+									echo "$(cat $Countfile) of $NumInLike complete..."
+								done <$TmpLike
+								clear
+								sed -i '/#EXTM3U/d' $HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u
+								sed -i '1s/^/#EXTM3U\n/' $HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u
+								cat $(echo "$HOME/.config/mpd/playlists/Like-Cloud-List-$Date.m3u") | grep -v '^http' | cut -d, -f2-
+								echo " "
+								echo "╔╦╗┌─┐┌┐┌┌─┐┬"
+								echo " ║║│ ││││├┤ │"
+								echo "═╩╝└─┘┘└┘└─┘o"
+								echo "Created new playlist from $NumInLike liked songs with $Number songs per liked song, for a total number of $(grep -c "http" $HOME/.config/mpd/playlists/Like-Cloud-List-$Date.m3u) songs in your new cloud based playlist!"
+								echo " "
+								rm $TmpLike
+								rm $Countfile
+								;;
+							a)
+								tail -n +2 "$LikeFile" | sed '/^\s*$/d' | sed 'n; d' > "$TmpLike"  # Remove first line from likefile, remove spaces, keep odd lines leaving only all song IDs
+								NumInLike=$(cat $TmpLike | wc -l)
+								Countfile=$HOME/dotfiles/songs/countfile
+								echo 0 > $Countfile
+								echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+								echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+								echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+								echo "$(cat $Countfile) of $NumInLike complete..."
+								while read songs; do
+									curl -s $(echo "http://localhost:9999/get_new_station_by_id?id=$songs&type=song&num_tracks=$Number") | grep -v ^# | while read url; do mpc add "$url"; done
+									Count=$[$(cat $Countfile) + 1]
+									echo $Count > $Countfile
+									clear
+									echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+									echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+									echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+									echo "$(cat $Countfile) of $NumInLike complete..."
+								done <$TmpLike
+								clear
+								echo " "
+								echo "╔╦╗┌─┐┌┐┌┌─┐┬"
+								echo " ║║│ ││││├┤ │"
+								echo "═╩╝└─┘┘└┘└─┘o"
+								echo "Added $(($NumInLike * $Number)) songs to Now Playing from your cloud likes!"
+								echo " "
+								rm $TmpLike
+								rm $Countfile
+								;;
+						esac
+					;;
+				n)
+					echo "╦═╗┌─┐┬  ┬┌─┐┬─┐┌┬┐┬┌┐┌┌─┐┬"
+					echo "╠╦╝├┤ └┐┌┘├┤ ├┬┘ │ │││││ ┬│"
+					echo "╩╚═└─┘ └┘ └─┘┴└─ ┴ ┴┘└┘└─┘o"
+					echo "Ignored cloud playlist..."
+					echo "Reverting to Local Likes only."
+					echo " "
+					echo "Press Enter to continue:"
+					read
+					clear
+					echo "╔╗╔┬ ┬┌┬┐┌┐ ┌─┐┬─┐"
+					echo "║║║│ ││││├┴┐├┤ ├┬┘"
+					echo "╝╚╝└─┘┴ ┴└─┘└─┘┴└─"
+					echo "How many songs to pull per liked song?"
+					read Number
+					clear
+					LikeFile=$HOME/dotfiles/songs/like
+					TmpLike=$HOME/dotfiles/songs/tmplike
+					Date=`date +%y-%m-%d-%H-%M-%S`
+					echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+					echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+					echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+					echo "Creating Like-Playlist-$Date.m3u "
+					sleep 2
+					clear
+					case $AddorDel in
+						n)
+							tail -n +2 "$LikeFile" | sed '/^\s*$/d' | sed 'n; d' > "$TmpLike"  # Remove first line from likefile, remove spaces, keep odd lines leaving only all song IDs
+							NumInLike=$(cat $TmpLike | wc -l)
+							Countfile=$HOME/dotfiles/songs/countfile
+							echo 0 > $Countfile
+							echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+							echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+							echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+							echo "$(cat $Countfile) of $NumInLike complete..."
+							while read songs; do
+								curl -s $(echo "http://localhost:9999/get_new_station_by_id?id=$songs&type=song&num_tracks=$Number") >> $(echo "$HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u" | tr ' ' '-')
+								Count=$[$(cat $Countfile) + 1]
+								echo $Count > $Countfile
+								clear
+								echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+								echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+								echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+								echo "$(cat $Countfile) of $NumInLike complete..."
+							done <$TmpLike
+							clear
+							sed -i '/#EXTM3U/d' $HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u
+							sed -i '1s/^/#EXTM3U\n/' $HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u
+							cat $(echo "$HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u") | grep -v '^http' | cut -d, -f2-
+							echo " "
+							echo "╔╦╗┌─┐┌┐┌┌─┐┬"
+							echo " ║║│ ││││├┤ │"
+							echo "═╩╝└─┘┘└┘└─┘o"
+							echo "Created new playlist from $NumInLike liked songs with $Number songs per liked song, for a total number of $(grep -c "http" $HOME/.config/mpd/playlists/Like-Playlist-$Date.m3u) songs in your new playlist!"
+							echo " "
+							rm $TmpLike
+							rm $Countfile
+							;;
+						a)
+							tail -n +2 "$LikeFile" | sed '/^\s*$/d' | sed 'n; d' > "$TmpLike"  # Remove first line from likefile, remove spaces, keep odd lines leaving only all song IDs
+							NumInLike=$(cat $TmpLike | wc -l)
+							Countfile=$HOME/dotfiles/songs/countfile
+							echo 0 > $Countfile
+							echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+							echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+							echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+							echo "$(cat $Countfile) of $NumInLike complete..."
+							while read songs; do
+								curl -s $(echo "http://localhost:9999/get_new_station_by_id?id=$songs&type=song&num_tracks=$Number") | grep -v ^# | while read url; do mpc add "$url"; done
+								Count=$[$(cat $Countfile) + 1]
+								echo $Count > $Countfile
+								clear
+								echo "╦ ╦┌─┐┬─┐┬┌─┬┌┐┌┌─┐   "
+								echo "║║║│ │├┬┘├┴┐│││││ ┬   "
+								echo "╚╩╝└─┘┴└─┴ ┴┴┘└┘└─┘ooo"
+								echo "$(cat $Countfile) of $NumInLike complete..."
+							done <$TmpLike
+							clear
+							echo " "
+							echo "╔╦╗┌─┐┌┐┌┌─┐┬"
+							echo " ║║│ ││││├┤ │"
+							echo "═╩╝└─┘┘└┘└─┘o"
+							echo "Added $(($NumInLike * $Number)) songs to Now Playing!"
+							echo " "
+							rm $TmpLike
+							rm $Countfile
+							;;
+					esac
+					;;
+			esac
+		esac
 else
 	clear
 	echo "╔═╗╦═╗╦═╗╔═╗╦═╗┬┬┬"
