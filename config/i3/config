@@ -130,6 +130,8 @@ bindsym $mod+Ctrl+semicolon move workspace to output right
 bindsym $mod+Ctrl+j move workspace to output left
 bindsym $mod+Ctrl+p gaps inner current plus 15
 bindsym $mod+Ctrl+o gaps inner current minus 15
+bindsym $mod+Shift+Ctrl+p gaps outer current plus 15
+bindsym $mod+Shift+Ctrl+o gaps outer current minus 15
 bindsym $mod+r mode "resize"
 mode "resize" {
 		bindsym semicolon resize shrink width 10 px or 10 ppt
