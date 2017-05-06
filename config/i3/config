@@ -28,7 +28,7 @@ set_from_resource $color14 color14
 set_from_resource $color15 color15
 
 # class                 		border  			backgr. 		text    		indicator 		child_border
-client.focused          		$foreground 		$background 	$foreground	 	$color266  	$color1staa
+client.focused          		$foreground 		$background 	$foreground	 	$color266  	#4144f4
 client.focused_inactive			$foreground 	 	$background 	$color7 		$color1st   	$color333
 client.unfocused        		$foreground 		$background 	$color7			$color1st 	$color333
 client.urgent           		$foreground 		$background 	$color4 		$color14   	$color14FF
@@ -57,7 +57,7 @@ assign [class="virt-manager"] $workspace6
 
 # Window Parameters
 #for_window [class="Gimp"] floating enable, border normal
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 200
 
@@ -67,10 +67,10 @@ bindsym $mod+Shift+y fullscreen disable
 bindsym --whole-window button2 floating toggle; sticky disable
 bindsym $mod+Return exec i3-sensible-terminal; workspace $workspace3
 bindsym $mod+Shift+Return exec subl3; workspace $workspace1
-bindsym $mod+Ctrl+Return exec thunar; w2orkspace $workspace4
+bindsym $mod+Ctrl+Return exec thunar; workspace $workspace4
 bindsym $mod+c exec google-chrome-stable; workspace $workspace2
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+d exec rofi -show ssh
+bindsym $mod+Shift+d exec rofi -show ssh|
 bindsym $mod+Tab exec rofi -show window -lines 10 -location 2 -yoffset 100
 bindsym $mod+Shift+Tab exec sh ~/dotfiles/scripts/i3_switch_workspace.sh
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -show run -p "Applications:" -sidebar-mode'
@@ -98,6 +98,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Shift+Ctrl+Left move container to workspace prev; workspace prev
+bindsym $mod+Shift+Ctrl+Right move container to workspace next; workspace next
 bindsym $mod+a focus parent
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -123,9 +127,9 @@ bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspa
 bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
 bindsym $mod+Ctrl+semicolon move workspace to output right
-bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+Ctrl+j move workspace to output left
-bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+p gaps inner current plus 15
+bindsym $mod+Ctrl+o gaps inner current minus 15
 bindsym $mod+r mode "resize"
 mode "resize" {
 		bindsym semicolon resize shrink width 10 px or 10 ppt
