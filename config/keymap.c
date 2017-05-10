@@ -1,4 +1,6 @@
 #include "amj40.h"
+//Following line allows macro to read current RGB settings
+extern rgblight_config_t rgblight_config;
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -90,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,   KC_BSPC,\
         KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,    F(3),\
         KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_RSFT,\
-        KC_LCTL, KC_LALT, KC_LGUI,          F(0),           F(1),        F(2), RALT(KC_GRAVE), KC_RCTL \
+        KC_LCTL, KC_LALT, KC_LGUI,          LOWER,           F(1),        F(2), RALT(KC_GRAVE), KC_RCTL \
 		),
 
     [_LOWER] = KEYMAP( \
@@ -127,6 +129,12 @@ enum function_id {
     LAUNCH,
     RGBLED_TOGGLE,
 };
+
+// define variables for reactive RGB
+bool RGB_INIT = false;
+bool TOG_STATUS = false;
+bool NUMLAY_STATUS = false; // this can be named for any toggle layer
+int RGB_current_mode;
 
 const uint16_t PROGMEM fn_actions[] = {
 	[0]  = ACTION_LAYER_TAP_KEY(_LOWER, KC_SPC),
@@ -309,9 +317,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     
     case LOWER:
       if (record->event.pressed) {
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(16);
+        }
         layer_on(_LOWER);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
       } else {
+        rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
+        TOG_STATUS = false;
         layer_off(_LOWER);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
