@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	
     [_RAISE] = KEYMAP( \
         KC_GRAVE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDOWN, KC_UP, KC_PGUP, KC_PSCREEN, KC_DEL, \
-		_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_SCOLON, \
+		KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_SCOLON, \
 		_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
 		_______, _______, _______, _______, _______, _______, _______, _______ \
 		),
@@ -153,7 +153,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     case MACRO_FULLSCREEN:
         if (record->event.pressed)
         {
-            return MACRO( D(LALT), T(F), U(LALT), END  );
+            return MACRO( D(LALT), T(F), U(LALT), END  ); 
         }
         break;
     case MACRO_NET:
@@ -337,9 +337,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case WINMAN:
       if (record->event.pressed) {
-        layer_on(_ADJUST);
+        layer_on(_WINMAN);
       } else {
-        layer_off(_ADJUST);
+        layer_off(_WINMAN);
       }
       return false;
       break;
