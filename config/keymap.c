@@ -338,9 +338,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case RAISE:
       if (record->event.pressed) {
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(16);
+        }
         layer_on(_RAISE);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
       } else {
+        rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
+        TOG_STATUS = false;
         layer_off(_RAISE);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
@@ -348,16 +359,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case ADJUST:
       if (record->event.pressed) {
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(16);
+        }
         layer_on(_ADJUST);
       } else {
+        rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
+        TOG_STATUS = false;
         layer_off(_ADJUST);
       }
       return false;
       break;
     case WINMAN:
       if (record->event.pressed) {
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(16);
+        }
         layer_on(_WINMAN);
       } else {
+        rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
+        TOG_STATUS = false;
         layer_off(_WINMAN);
       }
       return false;
