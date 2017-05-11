@@ -90,18 +90,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = KEYMAP( \
         KC_ESC,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,   KC_BSPC,\
-        KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,    F(3),\
+        KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,    WINMAN,\
         KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_RSFT,\
-        KC_LCTL, KC_LALT, KC_LGUI,          F(0),           F(1),        F(2), RALT(KC_GRAVE), KC_RCTL \
+        KC_LCTL, KC_LALT, KC_LGUI,     LOWER,      RAISE,     ADJUST, RALT(KC_GRAVE), KC_RCTL \
 		),
 
-//  Below works with RGB code, while above ACTION_LAYER_TAP_KEYs F(0), F(1), F(2), F(3) when going to layers on hold do not trigger RGB code.
-//    [_QWERTY] = KEYMAP( \
-//        KC_ESC,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,   KC_BSPC,\
-//        KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,    WINMAN,\
-//        KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_RSFT,\
-//        KC_LCTL, KC_LALT, KC_LGUI,          LOWER,           RAISE,        ADJUST, RALT(KC_GRAVE), KC_RCTL \
-//    ),
+/*
+  Below works with RGB code, while above ACTION_LAYER_TAP_KEYs F(0), F(1), F(2), F(3) when going to layers on hold do not trigger RGB code.
+    [_QWERTY] = KEYMAP( \
+        KC_ESC,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,   KC_BSPC,\
+        KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,    WINMAN,\
+        KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_RSFT,\
+        KC_LCTL, KC_LALT, KC_LGUI,          LOWER,           RAISE,        ADJUST, RALT(KC_GRAVE), KC_RCTL \
+    ),
+*/
 
     [_LOWER] = KEYMAP( \
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, \
@@ -143,13 +145,6 @@ bool RGB_INIT = false;
 bool TOG_STATUS = false;
 bool NUMLAY_STATUS = false; // this can be named for any toggle layer
 int RGB_current_mode;
-
-const uint16_t PROGMEM fn_actions[] = {
-	[0]  = ACTION_LAYER_TAP_KEY(_LOWER, KC_SPC),
-	[1]  = ACTION_LAYER_TAP_KEY(_RAISE, KC_SPC),
-	[2]  = ACTION_LAYER_TAP_KEY(_ADJUST, XXXXXXX),
-  [3]  = ACTION_LAYER_TAP_KEY(_WINMAN, KC_ENT),
-};
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
@@ -319,12 +314,15 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     return MACRO_NONE;
 };
 
+static uint16_t key_timer;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
  
   switch (keycode) {
     
     case LOWER:
       if (record->event.pressed) {
+        key_timer = timer_read();
         if (RGB_INIT) {} else {
           RGB_current_mode = rgblight_config.mode;
           RGB_INIT = true;
@@ -332,20 +330,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(16);
+          rgblight_mode(26);
         }
-        layer_on(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
+        while(record->event.pressed){
+          if (timer_elapsed(key_timer) > 100) {
+            layer_on(_LOWER);
+            break;
+          }
+        }
       } else {
+        if (timer_elapsed(key_timer) < 100) { // 150 being 150ms, the threshhold we pick for counting something as a tap.
+            register_code(KC_SPC);
+        }
         rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
         TOG_STATUS = false;
         layer_off(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
       return false;
       break;
     case RAISE:
       if (record->event.pressed) {
+        key_timer = timer_read();
         if (RGB_INIT) {} else {
           RGB_current_mode = rgblight_config.mode;
           RGB_INIT = true;
@@ -353,20 +358,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(16);
+          rgblight_mode(26);
         }
         layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       } else {
+        if (timer_elapsed(key_timer) < 100) { // 150 being 150ms, the threshhold we pick for counting something as a tap.
+            register_code(KC_SPC);
+        }
         rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
         TOG_STATUS = false;
         layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
       return false;
       break;
     case ADJUST:
       if (record->event.pressed) {
+        key_timer = timer_read();
         if (RGB_INIT) {} else {
           RGB_current_mode = rgblight_config.mode;
           RGB_INIT = true;
@@ -374,7 +381,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(16);
+          rgblight_mode(26);
         }
         layer_on(_ADJUST);
       } else {
@@ -386,6 +393,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case WINMAN:
       if (record->event.pressed) {
+        key_timer = timer_read();
         if (RGB_INIT) {} else {
           RGB_current_mode = rgblight_config.mode;
           RGB_INIT = true;
@@ -393,13 +401,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(16);
+          rgblight_mode(6);
         }
         layer_on(_WINMAN);
       } else {
+        if (timer_elapsed(key_timer) < 100) { // 150 being 150ms, the threshhold we pick for counting something as a tap.
+            register_code(KC_ENT);
+        }
         rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
         TOG_STATUS = false;
         layer_off(_WINMAN);
+      }
+      return false;
+      break;
+    case RGB_MOD:
+      //led operations - RGB mode change now updates the RGB_current_mode to allow the right RGB mode to be set after reactive keys are released
+      if (record->event.pressed) {
+        rgblight_mode(RGB_current_mode);
+        rgblight_step();
+        RGB_current_mode = rgblight_config.mode;
       }
       return false;
       break;
