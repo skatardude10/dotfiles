@@ -320,14 +320,11 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     return MACRO_NONE;
 };
 
-static uint16_t key_timer;
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
  
   switch (keycode) {
     case ADJUST:
       if (record->event.pressed) {
-        key_timer = timer_read();
         if (RGB_INIT) {} else {
           RGB_current_mode = rgblight_config.mode;
           RGB_INIT = true;
@@ -335,7 +332,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(26);
+          rgblight_mode(29);
         }
         layer_on(_ADJUST);
       } else {
