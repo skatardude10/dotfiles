@@ -320,6 +320,49 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     return MACRO_NONE;
 };
 
+void matrix_scan_user(void) {
+  uint8_t layer = biton32(layer_state);
+  switch (layer) {
+    case _RAISE:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(29);
+        }
+        break;
+    case _LOWER:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(29);
+        }
+        break;
+    case _WINMAN:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(29);
+        }
+        break;
+    case _QWERTY:
+        rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
+        TOG_STATUS = false;
+        break;
+  }
+};
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
  
   switch (keycode) {
