@@ -369,6 +369,10 @@ void matrix_scan_user(void) {
         rgblight_mode(3);
         break;
     case _QWERTY:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
         rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
         TOG_STATUS = false;
         break;
