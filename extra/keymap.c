@@ -4,6 +4,8 @@
 #include "keymap_nordic.h"
 
 extern keymap_config_t keymap_config;
+extern rgblight_config_t rgblight_config;
+
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -178,6 +180,12 @@ float tone_dvorak[][2]     = SONG(DVORAK_SOUND);
 float tone_colemak[][2]    = SONG(COLEMAK_SOUND);
 #endif
 
+// define variables for reactive RGB
+bool RGB_INIT = false;
+bool TOG_STATUS = false;
+bool NUMLAY_STATUS = false; // this can be named for any toggle layer
+int RGB_current_mode;
+
 void persistant_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
   default_layer_set(default_layer);
@@ -190,6 +198,53 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
 
 // Other declarations would go here, separated by commas, if you have them
+};
+
+void matrix_scan_user(void) {
+  uint8_t layer = biton32(layer_state);
+  switch (layer) {
+    case _RAISE:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(29);
+        }
+        break;
+    case _LOWER:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(29);
+        }
+        break;
+    case _ADJUST:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
+        } else {
+          TOG_STATUS = !TOG_STATUS;
+          rgblight_mode(29);
+        }
+        break;
+    case _QWERTY:
+        if (RGB_INIT) {} else {
+          RGB_current_mode = rgblight_config.mode;
+          RGB_INIT = true;
+        }
+        rgblight_mode(RGB_current_mode);   // revert RGB to initial mode prior to RGB mode change
+        TOG_STATUS = false;
+        break;
+  }
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -246,6 +301,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_on(_ADJUST);
       } else {
         layer_off(_ADJUST);
+      }
+      return false;
+      break;
+    case RGB_MOD:
+      //led operations - RGB mode change now updates the RGB_current_mode to allow the right RGB mode to be set after reactive keys are released
+      if (record->event.pressed) {
+        rgblight_mode(RGB_current_mode);
+        rgblight_step();
+        RGB_current_mode = rgblight_config.mode;
       }
       return false;
       break;
