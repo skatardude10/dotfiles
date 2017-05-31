@@ -58,6 +58,7 @@ assign [class="virt-manager"] $workspace6
 # Window Parameters
 #for_window [class="Gimp"] floating enable, border normal
 for_window [class="^.*"] border pixel 2
+for_window [urgent="latest"] focus
 gaps inner 10
 gaps outer 200
 
