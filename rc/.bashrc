@@ -7,6 +7,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # == Alias == #
+alias po='poweroff'
 alias feh='feh -Z.'
 alias ls='ls -a --color=auto --group-directories-first'
 alias update='yaourt -Syu'
