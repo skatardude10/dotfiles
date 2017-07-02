@@ -55,6 +55,11 @@ enum custom_keycodes {
 #define M_GINC              M(MACRO_GAPS_INCREASE)
 #define M_GDEC              M(MACRO_GAPS_DECREASE)
 
+#define M_BRTOG             M(MACRO_BREATH_TOGGLE)
+#define M_BSPDU             M(MACRO_BREATH_SPEED_INC)
+#define M_BSPDD             M(MACRO_BREATH_SPEED_DEC)
+#define M_BDFLT             M(MACRO_BREATH_DEFAULT)
+
 #define M_FULS              M(MACRO_FULLSCREEN)
 #define M_NET               M(MACRO_NET)
 #define M_VERT              M(MACRO_VERTICAL)
@@ -117,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  _______,  _______,  XXXXXXX,  KC_BTN1,  KC_BTN2,  _______,  XXXXXXX,  XXXXXXX,  _______)
   ,
   [_WINMAN] = KEYMAP(
-    M_KILL,   XXXXXXX,  M_WINU,   M_FULS,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   M_GDEC,   M_GINC,
+    M_KILL,   XXXXXXX,  M_WINU,   M_FULS,  M_BRTOG,  M_BSPDU,  M_BSPDD,  M_BDFLT,   M_GDEC,   M_GINC,
     KC_RSFT,  M_WINL,   M_WIND,   M_WINR,  M_VERT,   M_HORZ,   XXXXXXX,  XXXXXXX,   XXXXXXX,  _______,
     XXXXXXX,  XXXXXXX,  M_NET,    M_MWSL,  M_GWSL,   M_GWSR,   M_MWSR,   XXXXXXX,   XXXXXXX,  TG(_TOGGLE))
   ,
@@ -261,6 +266,34 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         if (record->event.pressed)
         {
             return MACRO( D(LSFT), D(LALT), T(Q), U(LALT), U(LSFT), END  );
+        }
+        break;
+
+    case MACRO_BREATH_TOGGLE:
+        if (record->event.pressed)
+        {
+            breathing_toggle();
+        }
+        break;
+
+    case MACRO_BREATH_SPEED_INC:
+        if (record->event.pressed)
+        {
+            breathing_speed_inc(1);
+        }
+        break;
+
+    case MACRO_BREATH_SPEED_DEC:
+        if (record->event.pressed)
+        {
+            breathing_speed_dec(1);
+        }
+        break;
+
+    case MACRO_BREATH_DEFAULT:
+        if (record->event.pressed)
+        {
+            breathing_defaults();
         }
         break;
 

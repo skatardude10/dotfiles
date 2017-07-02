@@ -340,7 +340,7 @@ void matrix_scan_user(void) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(29);
+          rgblight_mode(4);
         }
         break;
     case _LOWER:
@@ -351,7 +351,7 @@ void matrix_scan_user(void) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(29);
+          rgblight_mode(5);
         }
         break;
     case _WINMAN:
@@ -366,7 +366,7 @@ void matrix_scan_user(void) {
         }
         break;
     case _GAMING:
-        rgblight_mode(3);
+        rgblight_mode(20);
         break;
     case _QWERTY:
         if (RGB_INIT) {} else {
@@ -391,7 +391,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TOG_STATUS) { //TOG_STATUS checks is another reactive key currently pressed, only changes RGB mode if returns false
         } else {
           TOG_STATUS = !TOG_STATUS;
-          rgblight_mode(29);
+          rgblight_mode(25);
         }
         layer_on(_ADJUST);
       } else {
