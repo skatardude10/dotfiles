@@ -82,7 +82,10 @@ enum {
   TD_Q_ESC = 0,
   TD_SFT_CTL = 1,
   TD_A_TAB = 2, 
-  TD_5_DOT = 3
+  TD_5_DOT = 3, 
+  TD_C_ALT = 4,
+  TD_X_GUI = 5,
+  TD_Z_CTRL = 6
 };
 
 //Tap Dance Definitions
@@ -91,15 +94,18 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_Q_ESC]  = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
   [TD_SFT_CTL]  = ACTION_TAP_DANCE_DOUBLE(KC_RSFT, KC_LCTL),
   [TD_A_TAB]  = ACTION_TAP_DANCE_DOUBLE(KC_A, KC_TAB), 
-  [TD_5_DOT]  = ACTION_TAP_DANCE_DOUBLE(KC_P5, KC_PDOT)
+  [TD_5_DOT]  = ACTION_TAP_DANCE_DOUBLE(KC_P5, KC_PDOT),
+  [TD_C_ALT]  = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_LALT),
+  [TD_X_GUI]  = ACTION_TAP_DANCE_DOUBLE(KC_X, KC_LGUI),
+  [TD_Z_CTRL]  = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_LCTL)
 // Other declarations would go here, separated by commas, if you have them
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = KEYMAP(
     TD(0),    KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
-    TD(2),    KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     XXXXXXX,     F(4),
-    CTL_T(KC_Z), GUI_T(KC_X), ALT_T(KC_C), F(0), F(1), F(2),    F(3),     KC_M,     KC_L,    TD(1))
+    TD(2),    KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     F(4),
+    TD(6), TD(5), TD(4), F(0), F(1), F(2),    F(3),     KC_M,     KC_L,    TD(1))
   ,
   [_ZERO] = KEYMAP(
     KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,
