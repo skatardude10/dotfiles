@@ -7,6 +7,8 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # == Alias == #
+alias re='reboot'
+alias sus='systemctl suspend'
 alias po='poweroff'
 alias feh='feh -Z.'
 alias ls='ls -a --color=auto --group-directories-first'
