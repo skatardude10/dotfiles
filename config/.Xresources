@@ -8,22 +8,44 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-*color0: #171930
-*color1: #0b4756
-*color2: #361097
-*color3: #39dbbd
-*color4: #68b421
-*color5: #165C91
-*color6: #525E95
-*color7: #a81b4d
-*color8: #222548
-*color9: #1590af
-*color10: #5619f1
-*color11: #4dfefe
-*color12: #98fe30
-*color13: #2293e8
-*color14: #7586d5
-*color15: #fe2874
+#define xbackground #111133
+#define xforeground #447755
+#define xcolor0 #171930
+#define xcolor1 #0b4756
+#define xcolor2 #361097
+#define xcolor3 #39dbbd
+#define xcolor4 #68b421
+#define xcolor5 #165C91
+#define xcolor6 #525E95
+#define xcolor7 #a81b4d
+#define xcolor8 #222548
+#define xcolor9 #1590af
+#define xcolor10 #5619f1
+#define xcolor11 #4dfefe
+#define xcolor12 #98fe30
+#define xcolor13 #2293e8
+#define xcolor14 #7586d5
+#define xcolor15 #fe2874
+
+ *.background: xbackground
+ *.foreground: xforeground
+ *.color0: xcolor0
+ *.color1: xcolor1
+ *.color2: xcolor2
+ *.color3: xcolor3
+ *.color4: xcolor4
+ *.color5: xcolor5
+ *.color6: xcolor6
+ *.color7: xcolor7
+ *.color8: xcolor8
+ *.color9: xcolor9
+ *.color10: xcolor10
+ *.color11: xcolor11
+ *.color12: xcolor12
+ *.color13: xcolor13
+ *.color14: xcolor14
+ *.color15: xcolor15
+*.depth: 32
 *.depth: 32
 
 ! == Xft == !
