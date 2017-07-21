@@ -8,8 +8,8 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #111133
-#define xforeground #447755
+#define xbackground #150021
+#define xforeground #4E7971
 #define xcolor0 #171930
 #define xcolor1 #0b4756
 #define xcolor2 #361097
@@ -45,7 +45,6 @@ i3bar.height: 20
  *.color13: xcolor13
  *.color14: xcolor14
  *.color15: xcolor15
-*.depth: 32
 *.depth: 32
 
 ! == Xft == !

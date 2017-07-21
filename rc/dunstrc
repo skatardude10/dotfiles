@@ -47,7 +47,7 @@
 
 [frame]
      width = 1
-     color = "#"
+     color = "#0b4756"
 
 [shortcuts]
     close = ctrl+space
@@ -56,18 +56,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#"
-    foreground = "#"
+    background = "#111133"
+    foreground = "#447755"
     timeout = 120
 
 [urgency_normal]
-    background = "#"
-    foreground = "#"
+    background = "#111133"
+    foreground = "#447755"
     timeout = 120
 
 [urgency_critical]
-    background = "#"
-    foreground = "#"
+    background = "#111133"
+    foreground = "#447755"
     timeout = 120
 
 [music]
