@@ -56,18 +56,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#111133"
-    foreground = "#447755"
+    background = "#150021"
+    foreground = "#4E7971"
     timeout = 120
 
 [urgency_normal]
-    background = "#111133"
-    foreground = "#447755"
+    background = "#150021"
+    foreground = "#4E7971"
     timeout = 120
 
 [urgency_critical]
-    background = "#111133"
-    foreground = "#447755"
+    background = "#150021"
+    foreground = "#4E7971"
     timeout = 120
 
 [music]
