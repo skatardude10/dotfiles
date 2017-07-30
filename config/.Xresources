@@ -8,24 +8,24 @@
 i3bar.height: 20
 
 ! == Color Scheme == !
-#define xbackground #150021
-#define xforeground #4E7971
-#define xcolor0 #171930
-#define xcolor1 #0b4756
-#define xcolor2 #361097
-#define xcolor3 #39dbbd
-#define xcolor4 #68b421
-#define xcolor5 #165C91
-#define xcolor6 #525E95
-#define xcolor7 #a81b4d
-#define xcolor8 #222548
-#define xcolor9 #1590af
-#define xcolor10 #5619f1
-#define xcolor11 #4dfefe
-#define xcolor12 #98fe30
-#define xcolor13 #2293e8
-#define xcolor14 #7586d5
-#define xcolor15 #fe2874
+#define xbackground #1a1a1a
+#define xforeground #ecf0f1
+#define xcolor0 #1a1a1a
+#define xcolor1 #ecf0f1
+#define xcolor2 #3498db
+#define xcolor3 #2ecc71
+#define xcolor4 #f1c40f
+#define xcolor5 #e67e22
+#define xcolor6 #e74c3c
+#define xcolor7 #6a6fc0
+#define xcolor8 #606060
+#define xcolor9 #6a6fc0
+#define xcolor10 #80a2fe
+#define xcolor11 #d196c0
+#define xcolor12 #ed9cb2
+#define xcolor13 #7bd7dc
+#define xcolor14 #52cbfe
+#define xcolor15 #6fc6fe
 
  *.background: xbackground
  *.foreground: xforeground
@@ -63,9 +63,8 @@ URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 URxvt.internalBorder: 10
 URxvt.depth: 32
-URxvt.background: rgba:1111/1111/3333/CCCC
 URxvt.cursorUnderline: true
-URxvt.cursorColor: color5
+URxvt.cursorColor: color6
 
 ! == Rofi == !
 rofi.padding: 10
