@@ -3,7 +3,7 @@
 
 include "/home/carder/.gtkrc-2.0.mine"
 gtk-theme-name="FlatColor"
-gtk-icon-theme-name="flattrcolor"
+gtk-icon-theme-name="Numix-Light"
 gtk-font-name="Droid Sans 10"
 gtk-cursor-theme-name="Blue"
 gtk-cursor-theme-size=0

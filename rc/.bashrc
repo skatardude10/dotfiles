@@ -21,15 +21,25 @@ alias mpc='MPD_HOST=127.0.0.1 mpc'
 
 # == Functions == #
 function actualsize { find "$1" -type f -links 1 -printf "%m\n" | awk '{m=m+$1} END {print m}'; }
+exitstatus()
+{
+    if [[ $? == 0 ]]; then
+        echo ":)"
+    else
+        echo "D:"
+    fi
+}
 
 # == Colors == #
-color1="\[$(tput setaf 0)\]"
-color2="\[$(tput setaf 1)\]"
-color3="\[$(tput setaf 2)\]"
-color4="\[$(tput setaf 3)\]"
-color5="\[$(tput setaf 4)\]"
+color1="\[$(tput setaf 1)\]"
+color2="\[$(tput setaf 2)\]"
+color3="\[$(tput setaf 3)\]"
+color4="\[$(tput setaf 4)\]"
+color5="\[$(tput setaf 5)\]"
+color7="\[$(tput setaf 6)\]"
+color6="\[$(tput setaf 7)\]"
 RESET="\[$(tput sgr0)\]"
-PS1="${color2}[\$(date +%k%M%S)] ${color3}[\u@\h] ${color4}[\$(ls -l | grep ^- | wc -l) files] ${color5}[\w] ${color6}\n> ${RESET}"
+PS1="\$(exitstatus) ${color2}[\$(date +%k%M%S)] ${color3}[\u@\h] ${color4}[\$(ls -l | grep ^- | wc -l) files] ${color5}[\w] ${color6}\n > ${RESET}"
 
 # == Machine Specific == #
 case $HOSTNAME in
