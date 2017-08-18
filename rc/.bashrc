@@ -75,7 +75,7 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_CONNECTION" ]; then
 		fi
     fi
 	if [[ $SSH_CLIENT == *"1.82"* ]]; then
-		export DISPLAY=LAPTOPPC:0.0
+		export DISPLAY=carderlaptopX:0.0
 		xrdb -merge ~/.Xresources
 	    if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" != "urxvt" ]; then
 			urxvt & disown
