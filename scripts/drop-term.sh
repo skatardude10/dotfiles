@@ -5,6 +5,6 @@ while true; do
 		then
 			sleep 15
 		else
-			urxvt -name dropterm -geometry 115x20
+			cool-retro-term
 	fi
 done
