@@ -1,0 +1,68 @@
+ mpd_music_dir = "~/Music/"  
+ mpd_connection_timeout = "5"  
+ mpd_crossfade_time = "25"  
+
+
+# Playlist
+song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+now_playing_prefix = "$b#"
+#now_playing_subfix = "/$b"
+playlist_display_mode = "classic" (classic/columns)
+autocenter_mode = "yes"
+centered_cursor = "no"
+cyclic_scrolling = "yes"
+mouse_list_scroll_whole_page = "no"
+#song_list_format = "{$8$9}{[%l] >> }{%t }$R{%a - %b}"
+#song_list_format = " $5%l $1║{$7 %a $1│$2 %t$1 $R $6%b$1 }|{$6 %f $1}"
+song_list_format = "$4%a $5%b $3$R $2 $9%t $2 $4"
+#song_list_format = " $8%l $1│{$7 %a $1│$6 %t }|{$6 %f }$1 $R $1%b$1"
+#
+# song_library_format = "{%n > }{%t}|{%f}"
+#
+# # Bars
+song_status_format = "{%a - }{%t - }{%b}"
+#progressbar_look = "|> "
+#progressbar_look = "─╼ "
+progressbar_look = "─□"
+titles_visibility = "no"
+header_visibility = "no"
+statusbar_visibility = "no" 
+
+# Browser
+browser_playlist_prefix = "$2plist »$9 "
+browser_display_mode = "classic" (classic/columns)
+
+# Colors
+colors_enabled = "yes"
+discard_colors_if_item_is_selected = "yes"
+empty_tag_color= "green"
+header_window_color= "green"
+volume_color= "green"
+state_line_color= "green"
+state_flags_color= "green"
+main_window_color= "green"
+color1= "green"
+      One of colors used in Song info, Tiny tag editor and Search engine.
+color2= "green"
+      One of colors used in Song info, Tiny tag editor and Search engine.
+progressbar_color= "green"
+progressbar_elapsed_color= "green"
+statusbar_color= "green"
+statusbar_time_color= "green"
+player_state_color= "green"
+alternative_ui_separator_color= "green"
+
+# Others
+song_window_title_format = "MPD: {%a > }{%t}|{%f}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "yes"
+user_interface = "alternative" (classic/alternative)
+
+
+mpd_host = "localhost"
+mpd_port = "6600"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "FIFO"
+visualizer_sync_interval = "15"
+visualizer_type = "spectrum" (spectrum/wave)
+visualizer_look = "◆+"
