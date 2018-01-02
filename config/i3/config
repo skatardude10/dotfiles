@@ -196,6 +196,7 @@ for_window [instance="dropterm2"] floating enable;
 for_window [instance="dropterm2"] move scratchpad; [instance="dropterm2"] scratchpad show; move absolute position center; resize shrink height 0px; resize grow width 0px; move scratchpad
 bindsym $mod+grave [instance="dropterm"] scratchpad show
 bindsym $sup+grave [instance="dropterm2"] scratchpad show
+for_window [class="looking-glass-client"] floating enable
 
 exec dot-sync
 exec xrdb ~/.Xresources
